@@ -103,19 +103,19 @@ Intuitively, graphs that can be easily divided into two have small  <img src="re
 
 (See images in the `readmeimg` file.)
 <p align='center'>
-    <img src="readmeimg/Graph1.png" width="225" />
-    <img src="readmeimg/Graph1-eigval.png" width="225" />
-    <img src="readmeimg/Graph2.png" width="225" />
-    <img src="readmeimg/Graph2-eigval.png" width="225" />
+    <img src="readmeimg/Graph1.png" width="220" />
+    <img src="readmeimg/Graph1-eigval.png" width="220" />
+    <img src="readmeimg/Graph2.png" width="220" />
+    <img src="readmeimg/Graph2-eigval.png" width="220" />
 </p>  
 
 
 Surprisingly, planar graphs also have small  <img src="readmeimg/Picture0.png" height="20" />  [3] :
 <p align='center'>
-    <img src="readmeimg/Graph6.png" width="225" />
-    <img src="readmeimg/Graph6-eigval.png" width="225" />
-    <img src="readmeimg/Graph5.png" width="225" />
-    <img src="readmeimg/Graph5-eigval.png" width="225" />
+    <img src="readmeimg/Graph6.png" width="220" />
+    <img src="readmeimg/Graph6-eigval.png" width="220" />
+    <img src="readmeimg/Graph5.png" width="220" />
+    <img src="readmeimg/Graph5-eigval.png" width="220" />
 </p>  
 
 This fascinating property of planar graphs lead me to the next topic: image partition using the Laplacian of planar graph.  
@@ -203,15 +203,15 @@ For a good d-regular expander:
 ***:round_pushpin: Some expanders***
 
 <p align='center'>
-    <img src="readmeimg/Graph7.png" width="300" />
-    <img src="readmeimg/Graph10.png" width="300" />
-    <img src="readmeimg/Graph11.png" width="300" />
+    <img src="readmeimg/Graph7.png" width="275" />
+    <img src="readmeimg/Graph10.png" width="275" />
+    <img src="readmeimg/Graph11.png" width="275" />
 </p>  
 
 <p align='center'>
-    <img src="readmeimg/Graph7-eigval.png" width="300" />
-    <img src="readmeimg/Graph10-eigval.png" width="300" />
-    <img src="readmeimg/Graph10-eigval.png" width="300" />
+    <img src="readmeimg/Graph7-eigval.png" width="275" />
+    <img src="readmeimg/Graph10-eigval.png" width="275" />
+    <img src="readmeimg/Graph10-eigval.png" width="275" />
 </p>  
 
 
@@ -264,15 +264,15 @@ One can prove that there exist a constant *c > 0* such that <img src="readmeimg/
 
 
 <p align='center'>
-    <img src="expander_results/M-n12.png" width="300" />
-    <img src="expander_results/M-n24.png" width="300" />
-    <img src="expander_results/M-n32.png" width="300" />
+    <img src="expander_results/M-n12.png" width="275" />
+    <img src="expander_results/M-n24.png" width="275" />
+    <img src="expander_results/M-n32.png" width="275" />
 </p>
 
 <p align='center'>
-    <img src="expander_results/M-n12-eigval.png" width="300" />
-    <img src="expander_results/M-n24-eigval.png" width="300" />
-    <img src="expander_results/M-n32-eigval.png" width="300" />
+    <img src="expander_results/M-n12-eigval.png" width="275" />
+    <img src="expander_results/M-n24-eigval.png" width="275" />
+    <img src="expander_results/M-n32-eigval.png" width="275" />
 </p>
 
 See images in the `expander_results` file.
