@@ -137,8 +137,8 @@ Implement in `image_partition_L.ipynb`.
 The construction is refer to [Professor Spielman's Matlab code](http://www.cs.yale.edu/homes/spielman/sgta/), where also provides a fascinating talk of Spectral Graph Theory.  
 
 
-1. Construct a planar graph on the image.
-2. Compute the Laplacian.
+1. Construct a planar graph on the image.  
+2. Compute the Laplacian.  
 3. Compute  <img src="readmeimg/Picture0.png" height="20" />  and its corresponding eigenvector.  
 4. Divide the image into 2 using the eigenvector.  
     (An eigenvector assigns each vertex/pixel a number, simply puts positive ones to a group and non-positive ones to another.)  
@@ -183,7 +183,7 @@ See more results in the `image_partition_results` file.
 
 Various ways to improve the performance:
 
-1. Find a better weight for each edge.
+1. Find a better weight for each edge.  
 2. Find a better selection of the eigenvector indices.
 
 
@@ -201,8 +201,11 @@ Various ways to improve the performance:
 For a good d-regular expander:
 
  - Every vertex subset has many neighbors, by the definition of the conductance.  
+
  - It has few edges compare to the number of its vertices.  
+
  - It is a sparsification of the complete graph. That is, they have similar spectrums of eigenvalues and eigenvectors, but the expander has much less edges.  
+
  - It acts like a random graph when it has many vertices, by the expander mixing lemma.  
 
 
@@ -229,9 +232,9 @@ For a good d-regular expander:
 
 ***:round_pushpin: Expander families***
 
-It is useful to construct an infinite families of *d*-regular expanders with constant *d* and constant lower bound of <img src="readmeimg/Picture0.png" height="20" /> .  
+It is useful to construct infinite families of *d*-regular expanders with constants *d* and lower bound of <img src="readmeimg/Picture0.png" height="20" /> .  
 
-There are 2 strategies that I implement  using Matlab, where descriptions are in the following sections.  
+There are 2 strategies that I implement using Matlab, where descriptions are in the following sections.  
 
 
 
