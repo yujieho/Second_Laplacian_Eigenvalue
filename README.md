@@ -34,7 +34,8 @@ This project reveals the relationship between  <img src="readmeimg/Picture1.png"
 
 ### Normalized Laplacian
 
-	<p align='center'><img src="readmeimg/Picture7.png" height="50" /></p>   where *A* is the adjacency matrix and *D* is a diagonal matrix with degree of vertices on its diagonal.  
+<p align='center'><img src="readmeimg/Picture7.png" height="50" /></p>  
+where *A* is the adjacency matrix and *D* is a diagonal matrix with degree of vertices on its diagonal.  
 
  - Symmetric, singular, positive semidefinite. 
 
@@ -51,7 +52,7 @@ This project reveals the relationship between  <img src="readmeimg/Picture1.png"
  - The multiplicity of the 0 eigenvalue is equal to the number of connected component a graph has.  
 
  -  
-	<img src="readmeimg/Picture1.png" height="100" />
+	<img src="readmeimg/Picture1.png" height="90" />
 
  -  The second smallest eigenvalue is 0 iff the graph is disconnected.
 <p align='center'><img src="readmeimg/Picture2-2.png" height="200" /></p>  
@@ -64,11 +65,8 @@ This project reveals the relationship between  <img src="readmeimg/Picture1.png"
 ### Conductance of Graph
 
 1. For a graph *G* = (*V*,*E*), conductance of a vertex subset *S* is (number of boundary of *S*) / min( number of vertex in *S*, number of vertex in *V-S* ).  
-<p align='center'>
-    <img src="readmeimg/Picture3.png" height="200" />
-    <img src="readmeimg/Picture4.png" height="40" />
-
-</p>
+<p align='center'><img src="readmeimg/Picture3.png" height="200" /></p>
+<img src="readmeimg/Picture4.png" height="40" />
 
 2. Conductance of a graph is the smallest conductance of a vertex subset *S* with size < |*V*| / 2 .  
 
@@ -79,28 +77,28 @@ This project reveals the relationship between  <img src="readmeimg/Picture1.png"
 <p align='center'><img src="readmeimg/Picture5.png" height="40" /></p>  
 
 Right side indicates:  
-1. Small  <img src="readmeimg/Picture0.png" height="100" />  implies small conductance.  
+1. Small  <img src="readmeimg/Picture0.png" height="15" />  implies small conductance.  
 2.  Small conductance implies its corresponding eigenvector is a good cut.  
 
 <img>  
 
 Left side indicates:  
-1. Large  <img src="readmeimg/Picture0.png" height="30" />  implies large conductance.  
+1. Large  <img src="readmeimg/Picture0.png" height="15" />  implies large conductance.  
 2. Large conductance implies that the graph is well-connected and is an expander.  
 
 
 
 
 
-## Small <img src="readmeimg/Picture0.png" height="50" /> 
+## Small <img src="readmeimg/Picture0.png" height="30" /> 
 
 ### Introduction
 
-Intuitively, graphs that can be easily divided into two have small  <img src="readmeimg/Picture0.png" height="30" />   :
+Intuitively, graphs that can be easily divided into two have small  <img src="readmeimg/Picture0.png" height="15" />   :
 <img>  
 
 
-Surprisingly, planar graphs also have small  <img src="readmeimg/Picture0.png" height="30" />  [3] :
+Surprisingly, planar graphs also have small  <img src="readmeimg/Picture0.png" height="15" />  [3] :
 <img>
 
 
@@ -111,7 +109,7 @@ This fascinating property of planar graphs lead me to the next topic: image part
 
 ### Image Partition
 
-##### :round_pushpin: Framework
+*** :round_pushpin: Framework ***
 
 The construction is refer to [Professor Spielman's Matlab code](http://www.cs.yale.edu/homes/spielman/sgta/), where also provides a fascinating talk of Spectral Graph Theory.  
 
@@ -129,7 +127,7 @@ See implementation in `image_partition_L.ipynb`.
 
 
 
-##### :round_pushpin: Demonstration
+*** :round_pushpin: Demonstration ***
 
 For the results, the eigenvector cut the down-sampled version of image into 2 parts: the part with read filter and the remain part.
 
@@ -155,7 +153,7 @@ For the results, the eigenvector cut the down-sampled version of image into 2 pa
 See more results in the `image_partition_results` file.
 
 
-##### :round_pushpin: Conclusion
+*** :round_pushpin: Conclusion ***
 
 Various ways to improve the performance:
 
@@ -165,7 +163,7 @@ Various ways to improve the performance:
 
 
 
-## Large <img src="readmeimg/Picture0.png" height="50" />
+## Large <img src="readmeimg/Picture0.png" height="30" />
 
 ### Introduction
 
@@ -185,13 +183,13 @@ Some expanders:
 
 
 
-A goal here is to construct an infinite families of *d*-regular expanders with constant *d* and constant lower bound of <img src="readmeimg/Picture0.png" height="30" /> .  
+A goal here is to construct an infinite families of *d*-regular expanders with constant *d* and constant lower bound of <img src="readmeimg/Picture0.png" height="15" /> .  
 
 There are 2 strategies that I implement using Matlab. Describe in the following sections.  
 
 
-##### :mag: Difficulty
-Note that computing  <img src="readmeimg/Picture0.png" height="30" />  become expensive when *n* is large, I use power method with Rayleigh quotient and matrix deflation technique to deal with this problem.  
+*** :mag: Difficulty ***
+Note that computing  <img src="readmeimg/Picture0.png" height="15" />  become expensive when *n* is large, I use power method with Rayleigh quotient and matrix deflation technique to deal with this problem.  
 
 
 
@@ -200,7 +198,7 @@ Note that computing  <img src="readmeimg/Picture0.png" height="30" />  become ex
 This is a simple explicit construction of expanders.  
 
 
-##### :round_pushpin: Framework
+*** :round_pushpin: Framework ***
 
 For a given *n*, construct a graph with *n x n* vertices.  
 
@@ -210,10 +208,10 @@ Connected vertex (a,b) to (a+1,b), (a-1,b), (a,b+1), (a,b-1), (a+b,b), (a-b,b), 
 
 The graph is a 8-regular graph with multi-edges and self-loops.
 
-One can prove that there exist a constant *c > 0* such that <img src="readmeimg/Picture0.png" height="30" />  for all *n*. [2]
+One can prove that there exist a constant *c > 0* such that <img src="readmeimg/Picture0.png" height="15" />  for all *n*. [2]
 
 
-##### :round_pushpin: Demonstration
+*** :round_pushpin: Demonstration ***
 
 <img>
 
