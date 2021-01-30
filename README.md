@@ -103,19 +103,19 @@ Intuitively, graphs that can be easily divided into two have small  <img src="re
 
 (See images in the `readmeimg` file.)
 <p align='center'>
-    <img src="readmeimg/Graph1.png" width="220" />
-    <img src="readmeimg/Graph1-eigval.png" width="220" />
-    <img src="readmeimg/Graph2.png" width="220" />
-    <img src="readmeimg/Graph2-eigval.png" width="220" />
+    <img src="readmeimg/Graph1.png" width="210" />
+    <img src="readmeimg/Graph1-eigval.png" width="210" />
+    <img src="readmeimg/Graph2.png" width="210" />
+    <img src="readmeimg/Graph2-eigval.png" width="210" />
 </p>  
 
 
 Surprisingly, planar graphs also have small  <img src="readmeimg/Picture0.png" height="20" />  [3] :
 <p align='center'>
-    <img src="readmeimg/Graph6.png" width="220" />
-    <img src="readmeimg/Graph6-eigval.png" width="220" />
-    <img src="readmeimg/Graph5.png" width="220" />
-    <img src="readmeimg/Graph5-eigval.png" width="220" />
+    <img src="readmeimg/Graph6.png" width="210" />
+    <img src="readmeimg/Graph6-eigval.png" width="210" />
+    <img src="readmeimg/Graph5.png" width="210" />
+    <img src="readmeimg/Graph5-eigval.png" width="210" />
 </p>  
 
 This fascinating property of planar graphs lead me to the next topic: image partition using the Laplacian of planar graph.  
