@@ -50,10 +50,10 @@ This project reveals the relationship between  <img src="https://latex.codecogs.
 
 3. The multiplicity of the 0 eigenvalue is equal to the number of connected component a graph has.  
 
-4. <img src="readmeimg/Picture1.png" height="40" />
+4. <img src="readmeimg/Picture1.png" height="70" />
 
 5. The second smallest eigenvalue is 0 iff the graph is disconnected.
-<p align='center'><img src="readmeimg/Picture2.png" height="250" /></p>  
+<p align='center'><img src="readmeimg/Picture2.png" height="200" /></p>  
 
 6. The largest eigenvalue is 2 iff a graph is bipartite.  
 
@@ -74,16 +74,17 @@ This project reveals the relationship between  <img src="https://latex.codecogs.
 
 ### Cheeger's Inequality
 
-1. <p align='center'><img src="readmeimg/Picture5.png" height="40" /></p>  
+<p align='center'><img src="readmeimg/Picture5.png" height="40" /></p>  
 
-2. Right side indicates:  
-    - Small  <img src="https://latex.codecogs.com/gif.latex?\lambda_2" title="\lambda_2" />  implies small conductance.
-    - Small conductance implies its corresponding eigenvector is a good cut.
+Right side indicates:  
+1. Small  <img src="https://latex.codecogs.com/gif.latex?\lambda_2" title="\lambda_2" />  implies small conductance.  
+2.  Small conductance implies its corresponding eigenvector is a good cut.  
+
 <img>  
 
-3. Left side indicates:  
-    - Large  <img src="https://latex.codecogs.com/gif.latex?\lambda_2" title="\lambda_2" />  implies large conductance. 
-    - Large conductance implies that the graph is well-connected and is an expander.
+Left side indicates:  
+1. Large  <img src="https://latex.codecogs.com/gif.latex?\lambda_2" title="\lambda_2" />  implies large conductance.  
+2. Large conductance implies that the graph is well-connected and is an expander.  
 
 
 
@@ -138,6 +139,7 @@ For the results, the eigenvector cut the down-sampled version of image into 2 pa
 </p>
 
 :pencil2: `images/daisy.jpg`, left: original image, right: result image with size 200 * 200.  
+<p align='center'>
     <img src="images/daisy.jpg" width="300" />
     <img src="image_partition_results/daisy_eigv4cut.jpg" width="300" />
 </p>
@@ -186,7 +188,8 @@ A goal here is to construct a infinite families of *d*-regular expanders with co
 There are 2 strategies that I implement using Matlab. Describe in the following sections.  
 
 
-:mag: Note that computing <img src="https://latex.codecogs.com/gif.latex?\lambda_2" title="\lambda_2" /> become expensive when *n* is large, I use power method with Rayleigh quotient and matrix deflation technique to deal with this problem.  
+:mag: #### Difficulty
+Note that computing <img src="https://latex.codecogs.com/gif.latex?\lambda_2" title="\lambda_2" /> become expensive when *n* is large, I use power method with Rayleigh quotient and matrix deflation technique to deal with this problem.  
 
 
 
@@ -198,12 +201,14 @@ This is a simple explicit construction of expanders.
 #### :round_pushpin: Framework
 
 For a given *n*, construct a graph with *n x n* vertices.  
+
 Consider a vertex as a pair from {0,...,*n* − 1} × {0,...,*n* − 1}, where the group operation is coordinate-wise addition modulo *n*.  
+
 Connected vertex (a,b) to (a+1,b), (a-1,b), (a,b+1), (a,b-1), (a+b,b), (a-b,b), (a,b+a), (a,b-a).  
 
 The graph is a 8-regular graph with multi-edges and self-loops.
 
-One can prove that there exist a constant *c > 0* such that <img src="https://latex.codecogs.com/gif.latex?\lambda_2(G_n)\leq c" title="\lambda_2(G_n)\leq c" /> for all *n*. [2](#2)
+One can prove that there exist a constant *c > 0* such that <img src="https://latex.codecogs.com/gif.latex?\lambda_2(G_n)\leq c" title="\lambda_2(G_n)\leq c" /> for all *n*. [2]
 
 
 #### :round_pushpin: Demonstration
