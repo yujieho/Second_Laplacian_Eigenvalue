@@ -103,19 +103,19 @@ Intuitively, graphs that can be easily divided into two have small  <img src="re
 
 (See images in the `readmeimg` file.)
 <p align='center'>
-    <img src="readmeimg/Graph1.png" width="245" />
-    <img src="readmeimg/Graph1-eigval.png" width="245" />
-    <img src="readmeimg/Graph2.png" width="245" />
-    <img src="readmeimg/Graph2-eigval.png" width="245" />
+    <img src="readmeimg/Graph1.png" width="225" />
+    <img src="readmeimg/Graph1-eigval.png" width="225" />
+    <img src="readmeimg/Graph2.png" width="225" />
+    <img src="readmeimg/Graph2-eigval.png" width="225" />
 </p>  
 
 
 Surprisingly, planar graphs also have small  <img src="readmeimg/Picture0.png" height="20" />  [3] :
 <p align='center'>
-    <img src="readmeimg/Graph6.png" width="245" />
-    <img src="readmeimg/Graph6-eigval.png" width="245" />
-    <img src="readmeimg/Graph5.png" width="245" />
-    <img src="readmeimg/Graph5-eigval.png" width="245" />
+    <img src="readmeimg/Graph6.png" width="225" />
+    <img src="readmeimg/Graph6-eigval.png" width="225" />
+    <img src="readmeimg/Graph5.png" width="225" />
+    <img src="readmeimg/Graph5-eigval.png" width="225" />
 </p>  
 
 This fascinating property of planar graphs lead me to the next topic: image partition using the Laplacian of planar graph.  
@@ -203,15 +203,15 @@ For a good d-regular expander:
 ***:round_pushpin: Some expanders***
 
 <p align='center'>
-    <img src="readmeimg/Graph7.png" width="325" />
-    <img src="readmeimg/Graph10.png" width="325" />
-    <img src="readmeimg/Graph11.png" width="325" />
+    <img src="readmeimg/Graph7.png" width="300" />
+    <img src="readmeimg/Graph10.png" width="300" />
+    <img src="readmeimg/Graph11.png" width="300" />
 </p>  
 
 <p align='center'>
-    <img src="readmeimg/Graph7-eigval.png" width="325" />
-    <img src="readmeimg/Graph10-eigval.png" width="325" />
-    <img src="readmeimg/Graph10-eigval.png" width="325" />
+    <img src="readmeimg/Graph7-eigval.png" width="300" />
+    <img src="readmeimg/Graph10-eigval.png" width="300" />
+    <img src="readmeimg/Graph10-eigval.png" width="300" />
 </p>  
 
 
@@ -264,15 +264,15 @@ One can prove that there exist a constant *c > 0* such that <img src="readmeimg/
 
 
 <p align='center'>
-    <img src="expander_results/M-n12.png" width="325" />
-    <img src="expander_results/M-n24.png" width="325" />
-    <img src="expander_results/M-n32.png" width="325" />
+    <img src="expander_results/M-n12.png" width="300" />
+    <img src="expander_results/M-n24.png" width="300" />
+    <img src="expander_results/M-n32.png" width="300" />
 </p>
 
 <p align='center'>
-    <img src="expander_results/M-n12-eigval.png" width="325" />
-    <img src="expander_results/M-n24-eigval.png" width="325" />
-    <img src="expander_results/M-n32-eigval.png" width="325" />
+    <img src="expander_results/M-n12-eigval.png" width="300" />
+    <img src="expander_results/M-n24-eigval.png" width="300" />
+    <img src="expander_results/M-n32-eigval.png" width="300" />
 </p>
 
 See images in the `expander_results` file.
@@ -290,7 +290,9 @@ Since the Marguli-Gabber-Galil expander only add a few edges to each vertex of t
 | 24*24 | 0.0170 | 0.0739 | 0.3462 |
 
 
-The random graphs seems to be better expanders than the Marguli-Gabber-Galil expanders.
+The random graphs seems to be better expanders than the Marguli-Gabber-Galil expanders.  
+
+This is reasonable since the Marguli-Gabber-Galil expanders have many multi-edges.
 
 
 
