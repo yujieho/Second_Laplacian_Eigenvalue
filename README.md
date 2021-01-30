@@ -1,8 +1,8 @@
 <h1 align="center">The Second Laplacian Eigenvalue</h1>
-<div align="center"><i>A survey on the second smallest Laplacian eigenvalue   <img src="https://latex.codecogs.com/gif.latex?\lambda_2" title="\lambda_2" />   and its applications.</i></div>
+<div align="center"><i>A survey on the second smallest Laplacian eigenvalue  <img src="readmeimg/Picture0.png" height="30" />  and its applications.</i></div>
 <br>
 
-This project reveals the relationship between  <img src="https://latex.codecogs.com/gif.latex?\lambda_2" title="\lambda_2" />  and the connectivity of a graph.
+This project reveals the relationship between  <img src="readmeimg/Picture1.png" height="30" /> and the connectivity of a graph.
 
 
 
@@ -14,12 +14,12 @@ This project reveals the relationship between  <img src="https://latex.codecogs.
     - [Conductance of Graph](#Conductance-of-Graph)
     - [Cheeger's Inequality](#Cheeger's-Inequality)
 
-- [Small](#Small)  <img src="https://latex.codecogs.com/gif.latex?\lambda_2" title="\lambda_2" />
+- [Small](#Small)  <img src="readmeimg/Picture0.png" height="30" /> 
 
     - [Introduction](#Introduction)
     - [Image Partition](#Image-Partition)
 
-- [Large](#Large)  <img src="https://latex.codecogs.com/gif.latex?\lambda_2" title="\lambda_2" />
+- [Large](#Large)  <img src="readmeimg/Picture0.png" height="30" /> 
 
     - [Introduction](#Introduction)
     - [The Marguli-Gabber-Galil Expander](#The-Marguli-Gabber-Galil-Expander)
@@ -34,26 +34,27 @@ This project reveals the relationship between  <img src="https://latex.codecogs.
 
 ### Normalized Laplacian
 
-1. <p align='center'><img src="https://latex.codecogs.com/gif.latex?I-D^{-1/2}AD^{-1/2}" title="I-D^{-1/2}AD^{-1/2}" />,</p>   where *A* is the adjacency matrix and *D* is a diagonal matrix with degree of vertices on its diagonal.  
+	<p align='center'><img src="readmeimg/Picture7.png" height="50" /></p>   where *A* is the adjacency matrix and *D* is a diagonal matrix with degree of vertices on its diagonal.  
 
-2. Symmetric, singular, positive semidefinite. 
+ - Symmetric, singular, positive semidefinite. 
 
-3. Measure the smoothness of a vector *x*.  
+ - Measure the smoothness of a vector *x*.  
 
 
 
 ### Eigenvalue of Normalized Laplacian
 
-1. Eigenvalues are between 0 and 2.  
+ -  Eigenvalues are between 0 and 2.  
 
-2. The smallest eigenvalue of Laplacian is always equal to 0, and its eigenvector is the all-one vector.
+ - The smallest eigenvalue of Laplacian is always equal to 0, and its eigenvector is the all-one vector.
 
-3. The multiplicity of the 0 eigenvalue is equal to the number of connected component a graph has.  
+ - The multiplicity of the 0 eigenvalue is equal to the number of connected component a graph has.  
 
-4. <img src="readmeimg/Picture1.png" height="70" />
+ -  
+	<img src="readmeimg/Picture1.png" height="100" />
 
-5. The second smallest eigenvalue is 0 iff the graph is disconnected.
-<p align='center'><img src="readmeimg/Picture2.png" height="200" /></p>  
+ -  The second smallest eigenvalue is 0 iff the graph is disconnected.
+<p align='center'><img src="readmeimg/Picture2-2.png" height="200" /></p>  
 
 6. The largest eigenvalue is 2 iff a graph is bipartite.  
 
@@ -64,8 +65,9 @@ This project reveals the relationship between  <img src="https://latex.codecogs.
 
 1. For a graph *G* = (*V*,*E*), conductance of a vertex subset *S* is (number of boundary of *S*) / min( number of vertex in *S*, number of vertex in *V-S* ).  
 <p align='center'>
+    <img src="readmeimg/Picture3.png" height="200" />
     <img src="readmeimg/Picture4.png" height="40" />
-    <img src="readmeimg/Picture3.png" height="250" />
+
 </p>
 
 2. Conductance of a graph is the smallest conductance of a vertex subset *S* with size < |*V*| / 2 .  
@@ -77,46 +79,46 @@ This project reveals the relationship between  <img src="https://latex.codecogs.
 <p align='center'><img src="readmeimg/Picture5.png" height="40" /></p>  
 
 Right side indicates:  
-1. Small  <img src="https://latex.codecogs.com/gif.latex?\lambda_2" title="\lambda_2" />  implies small conductance.  
+1. Small  <img src="readmeimg/Picture0.png" height="100" />  implies small conductance.  
 2.  Small conductance implies its corresponding eigenvector is a good cut.  
 
 <img>  
 
 Left side indicates:  
-1. Large  <img src="https://latex.codecogs.com/gif.latex?\lambda_2" title="\lambda_2" />  implies large conductance.  
+1. Large  <img src="readmeimg/Picture0.png" height="30" />  implies large conductance.  
 2. Large conductance implies that the graph is well-connected and is an expander.  
 
 
 
 
 
-## Small <img src="https://latex.codecogs.com/gif.latex?\lambda_2" title="\lambda_2" />
+## Small <img src="readmeimg/Picture0.png" height="50" /> 
 
 ### Introduction
 
-:mag: Intuitively, graphs that can be easily divided into two have small  <img src="https://latex.codecogs.com/gif.latex?\lambda_2" title="\lambda_2" />  :
+Intuitively, graphs that can be easily divided into two have small  <img src="readmeimg/Picture0.png" height="30" />   :
 <img>  
 
 
-:mag: Surprisingly, planar graphs also have small  <img src="https://latex.codecogs.com/gif.latex?\lambda_2" title="\lambda_2" />  ![3] :
+Surprisingly, planar graphs also have small  <img src="readmeimg/Picture0.png" height="30" />  [3] :
 <img>
 
 
-This fascinating thoery of planar graphs lead me to the next topic: image partition using the Laplacian of planar graph.  
-(It is interesting to find Laplacian also contribute in image partition, after finished the project of [image partition using the Random Walk matrix](https://github.com/yujieho/Image_Partition).)
+This fascinating property of planar graphs lead me to the next topic: image partition using the Laplacian of planar graph.  
+(See how Random Walk matrix also benefit to image partition in [my previous project of diffusion maps](https://github.com/yujieho/Image_Partition)!)
 
 
 
 ### Image Partition
 
-#### :round_pushpin: Framework
+##### :round_pushpin: Framework
 
-The construction is refer to [Professor Spielman's Matlab code](http://www.cs.yale.edu/homes/spielman/sgta/), where also provides a fasinating talk of Spectral Graph Thoery.  
+The construction is refer to [Professor Spielman's Matlab code](http://www.cs.yale.edu/homes/spielman/sgta/), where also provides a fascinating talk of Spectral Graph Theory.  
 
 
 1. Construct a planar graph on the image.
 2. Compute the Laplacian.
-3. Compute  <img src="https://latex.codecogs.com/gif.latex?\lambda_2" title="\lambda_2" />  and its corresponding eigenvector.  
+3. Compute  <img src="readmeimg/Picture0.png" height="30" />  and its corresponding eigenvector.  
 4. Divide the image into 2 using the eigenvector.  
     (An eigenvector assigns each vertex/pixel a number, simply puts positive ones to a group and non-positive ones to another.)  
 
@@ -127,9 +129,9 @@ See implementation in `image_partition_L.ipynb`.
 
 
 
-#### :round_pushpin: Demonstration
+##### :round_pushpin: Demonstration
 
-For the results, the eigenvector cut the down-sampled version of image into 2 parts, the part with read filter and the remain part.
+For the results, the eigenvector cut the down-sampled version of image into 2 parts: the part with read filter and the remain part.
 
 
 :pencil2: `images/cat.jpg`, left: original image, right: result image with size 90 * 140.  
@@ -140,20 +142,20 @@ For the results, the eigenvector cut the down-sampled version of image into 2 pa
 
 :pencil2: `images/daisy.jpg`, left: original image, right: result image with size 200 * 200.  
 <p align='center'>
-    <img src="images/daisy.jpg" width="300" />
-    <img src="image_partition_results/daisy_eigv4cut.jpg" width="300" />
+    <img src="images/daisy.jpg" width="280" />
+    <img src="image_partition_results/daisy_eigv4cut.jpg" width="280" />
 </p>
 
 :pencil2: `images/fruit4.jpg`, left: original image, right: result image with size 80 * 80.  
 <p align='center'>
-    <img src="images/fruit4.jpg" width="300" />
-    <img src="image_partition_results/fruit4_eigv5cut.jpg" width="300" />
+    <img src="images/fruit4.jpg" width="280" />
+    <img src="image_partition_results/fruit4_eigv5cut.jpg" width="280" />
 </p>
 
 See more results in the `image_partition_results` file.
 
 
-#### :round_pushpin: Conclusion
+##### :round_pushpin: Conclusion
 
 Various ways to improve the performance:
 
@@ -163,7 +165,7 @@ Various ways to improve the performance:
 
 
 
-## Large <img src="https://latex.codecogs.com/gif.latex?\lambda_2" title="\lambda_2" />
+## Large <img src="readmeimg/Picture0.png" height="50" />
 
 ### Introduction
 
@@ -183,13 +185,13 @@ Some expanders:
 
 
 
-A goal here is to construct a infinite families of *d*-regular expanders with constant *d* and constant lower bound of <img src="https://latex.codecogs.com/gif.latex?\lambda_2" title="\lambda_2" />.  
+A goal here is to construct an infinite families of *d*-regular expanders with constant *d* and constant lower bound of <img src="readmeimg/Picture0.png" height="30" /> .  
 
 There are 2 strategies that I implement using Matlab. Describe in the following sections.  
 
 
-:mag: #### Difficulty
-Note that computing <img src="https://latex.codecogs.com/gif.latex?\lambda_2" title="\lambda_2" /> become expensive when *n* is large, I use power method with Rayleigh quotient and matrix deflation technique to deal with this problem.  
+##### :mag: Difficulty
+Note that computing  <img src="readmeimg/Picture0.png" height="30" />  become expensive when *n* is large, I use power method with Rayleigh quotient and matrix deflation technique to deal with this problem.  
 
 
 
@@ -198,7 +200,7 @@ Note that computing <img src="https://latex.codecogs.com/gif.latex?\lambda_2" ti
 This is a simple explicit construction of expanders.  
 
 
-#### :round_pushpin: Framework
+##### :round_pushpin: Framework
 
 For a given *n*, construct a graph with *n x n* vertices.  
 
@@ -208,10 +210,10 @@ Connected vertex (a,b) to (a+1,b), (a-1,b), (a,b+1), (a,b-1), (a+b,b), (a-b,b), 
 
 The graph is a 8-regular graph with multi-edges and self-loops.
 
-One can prove that there exist a constant *c > 0* such that <img src="https://latex.codecogs.com/gif.latex?\lambda_2(G_n)\leq c" title="\lambda_2(G_n)\leq c" /> for all *n*. [2]
+One can prove that there exist a constant *c > 0* such that <img src="readmeimg/Picture0.png" height="30" />  for all *n*. [2]
 
 
-#### :round_pushpin: Demonstration
+##### :round_pushpin: Demonstration
 
 <img>
 
