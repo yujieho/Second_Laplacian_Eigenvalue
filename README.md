@@ -43,8 +43,7 @@ where *A* is the adjacency matrix and *D* is a diagonal matrix with degree of ve
 
 
 
-
-
+<br>
 ### Eigenvalue of Normalized Laplacian
 
  - Eigenvalues are between 0 and 2.  
@@ -64,7 +63,7 @@ where *A* is the adjacency matrix and *D* is a diagonal matrix with degree of ve
 
 
 
-
+<br>
 ### Conductance of Graph
 
  - For a graph *G* = (*V*,*E*), conductance of a vertex subset *S* is (number of boundary of *S*) / min( number of vertex in *S*, number of vertex in *V-S* ).  
@@ -75,7 +74,7 @@ where *A* is the adjacency matrix and *D* is a diagonal matrix with degree of ve
 
 
 
-
+<br>
 ### Cheeger's Inequality
 
 <p align='center'><img src="readmeimg/Picture5.png" height="40" /></p>  
@@ -94,7 +93,7 @@ Left side indicates:
 
 
 
-
+<br>
 ## Small Second Eigenvalue
 
 ### Introduction
@@ -124,7 +123,7 @@ This fascinating property of planar graphs lead me to the next topic: image part
 
 
 
-
+<br>
 ### Image Partition
 
 ***:round_pushpin: Framework***
@@ -144,7 +143,7 @@ The construction is refer to [Professor Spielman's Matlab code](http://www.cs.ya
 See implementation in `image_partition_L.ipynb`.  
 
 
-
+<br>
 ***:round_pushpin: Demonstration***
 
 For the results, the eigenvector cut the down-sampled version of image into 2 parts: the part with read filter and the remain part.
@@ -172,7 +171,7 @@ See more results in the `image_partition_results` file.
 
 
 
-
+<br>
 ***:round_pushpin: Conclusion***
 
 Various ways to improve the performance:
@@ -185,7 +184,7 @@ Various ways to improve the performance:
 
 
 
-
+<br>
 ## Large Second Eigenvalue
 
 
@@ -200,6 +199,7 @@ For a good d-regular expander:
 
 
 
+<br>
 ***:round_pushpin: Some expanders***
 
 <p align='center'>
@@ -216,6 +216,7 @@ For a good d-regular expander:
 
 
 
+<br>
 ***:round_pushpin: Expander families***
 
 It is useful to construct an infinite families of *d*-regular expanders with constant *d* and constant lower bound of <img src="readmeimg/Picture0.png" height="20" /> .  
@@ -227,6 +228,7 @@ Implementations are in the `expander` file, where descriptions are in the follow
 
 
 
+<br>
 ***:round_pushpin: Difficulty***
 
 Since `eigs` become very slow when *n* is large, I use power method with Rayleigh quotient and matrix deflation technique to find  <img src="readmeimg/Picture0.png" height="20" />.  
@@ -235,6 +237,7 @@ Since `eigs` become very slow when *n* is large, I use power method with Rayleig
 
 
 
+<br>
 ### The Marguli-Gabber-Galil Expander Construction
 
 This is a simple explicit construction of an infinite family of 8-regular expanders.  
@@ -253,6 +256,8 @@ The graph is a 8-regular graph with multi-edges and self-loops.
 One can prove that there exist a constant *c > 0* such that <img src="readmeimg/Picture0.png" height="20" />  for all *n*. [2]
 
 
+
+<br>
 ***:round_pushpin: Demonstration***
 
 
@@ -279,6 +284,8 @@ See images in the `expander_results` file.
 
 
 
+
+<br>
 ***:round_pushpin: Comparison***
 
 Since the Marguli-Gabber-Galil expander only add a few edges to each vertex of the grid graph and is a 8-regular graph, I think it interesting to compare <img src="readmeimg/Picture0.png" height="20" /> of the grid graph, the random 8-regular graph, and the Marguli-Gabber-Galil expander.
