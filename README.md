@@ -53,9 +53,6 @@ where *A* is the adjacency matrix and *D* is a diagonal matrix with degree of ve
 
  - The multiplicity of the 0 eigenvalue is equal to the number of connected component a graph has.  
 
- - 
-	<img src="readmeimg/Picture1.png" height="85" />
-
  - The second smallest eigenvalue is 0 iff the graph is disconnected.
 
  - The largest eigenvalue is 2 iff a graph is bipartite.  
@@ -84,9 +81,8 @@ where *A* is the adjacency matrix and *D* is a diagonal matrix with degree of ve
 
 Right side indicates:  
  - Small  <img src="readmeimg/Picture0.png" height="20" />  implies small conductance.  
- - Small conductance implies its corresponding eigenvector is a good cut.  
+ - Small conductance implies its corresponding eigenvector provide a good cut.  
 
-<img>  
 
 Left side indicates:  
  - Large  <img src="readmeimg/Picture0.png" height="20" />  implies large conductance.  
@@ -131,6 +127,11 @@ This fascinating property of planar graphs lead me to the next topic: image part
 
 ### Image Partition
 
+Implement in `image_partition_L.ipynb`.  
+
+
+<br>
+
 ***:round_pushpin: Framework***
 
 The construction is refer to [Professor Spielman's Matlab code](http://www.cs.yale.edu/homes/spielman/sgta/), where also provides a fascinating talk of Spectral Graph Theory.  
@@ -145,7 +146,6 @@ The construction is refer to [Professor Spielman's Matlab code](http://www.cs.ya
 <p align='center'><img src="readmeimg/Picture6.png" width="900" /></p>
 
 
-See implementation in `image_partition_L.ipynb`.  
 
 
 <br>
@@ -231,9 +231,7 @@ For a good d-regular expander:
 
 It is useful to construct an infinite families of *d*-regular expanders with constant *d* and constant lower bound of <img src="readmeimg/Picture0.png" height="20" /> .  
 
-There are 2 strategies that I implement  using Matlab.  
-
-Implementations are in the `expander` file, where descriptions are in the following sections.  
+There are 2 strategies that I implement  using Matlab, where descriptions are in the following sections.  
 
 
 
@@ -252,8 +250,13 @@ Since `eigs` become very slow when *n* is large, I use power method with Rayleig
 
 ### The Marguli-Gabber-Galil Expander Construction
 
+Implement in `expander` file.  
+
 This is a simple explicit construction of an infinite family of 8-regular expanders.  
 
+
+
+<br>
 
 ***:round_pushpin: Framework***
 
@@ -323,8 +326,7 @@ This is reasonable since the Marguli-Gabber-Galil expanders have many multi-edge
 
 
 
-
-
+<br>
 
 ## References
 [1] [Course: Spectral Graph Theory, Daniel A. Spielman, Yale.](http://www.cs.yale.edu/homes/spielman/561/syllabus.html)  
