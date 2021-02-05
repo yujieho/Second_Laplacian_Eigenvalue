@@ -118,7 +118,7 @@ Surprisingly, planar graphs also have small  <img src="readmeimg/Picture0.png" h
 </p>  
 
 This fascinating property of planar graphs lead me to the next topic: image partition using the Laplacian of planar graph.  
-(See how Random Walk matrix also benefit to image partition in [my previous project of diffusion maps](https://github.com/yujieho/Image_Partition)!)
+(See how Random Walk matrix is also used in image partition in [my previous project of diffusion maps](https://github.com/yujieho/Image_Partition)!)
 
 
 
@@ -181,9 +181,9 @@ See more results in the `image_partition_results` file.
 
 ***:round_pushpin: Conclusion***
 
-Various ways to improve the performance:
+Various ways to have a clearer contour:
 
-1. Find a better weight for each edge.  
+1. Define a better weight for each edge.  
 2. Find a better selection of the eigenvector indices.
 
 
@@ -245,6 +245,7 @@ There are 2 strategies that I implement using Matlab, where descriptions are in 
 
 Since `eigs` become very slow when *n* is large, I use power method with Rayleigh quotient and matrix deflation technique to find  <img src="readmeimg/Picture0.png" height="20" />.  
 
+The algorithm can be seen in `expander/myeig.m`.
 
 
 
@@ -271,7 +272,7 @@ Connected vertex (a,b) to (a+1,b), (a-1,b), (a,b+1), (a,b-1), (a+b,b), (a-b,b), 
 
 The graph is a 8-regular graph with multi-edges and self-loops.
 
-One can prove that there exist a constant *c > 0* such that <img src="readmeimg/Picture0.png" height="20" />  for all *n*. [2]
+One can prove that there exist a constant *c > 0* such that <img src="readmeimg/Picture0.png" height="20" /> is larger than *c*  for all *n*. [2]
 
 
 
