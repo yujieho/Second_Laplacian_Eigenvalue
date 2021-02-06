@@ -1,8 +1,8 @@
 <h1 align="center">The Second Laplacian Eigenvalue</h1>
-<div align="center"><i>A survey on the second smallest Laplacian eigenvalue  <img src="readmeimg/Picture0.png" height="20" />  and its applications.</i></div>
+<div align="center"><i>A survey on the second smallest Laplacian eigenvalue  <img src="images_readme/picture0.png" height="20" />  and its applications.</i></div>
 <br>
 
-This project reveals the relationship between  <img src="readmeimg/Picture0.png" height="20" /> and the connectivity of a graph.
+This project reveals the relationship between  <img src="images_readme/picture0.png" height="20" /> and the connectivity of a graph.
 
 
 
@@ -33,7 +33,7 @@ This project reveals the relationship between  <img src="readmeimg/Picture0.png"
 
 ### Normalized Laplacian
 
-<p align='center'><img src="readmeimg/Picture7.png" height="25" /></p>  
+<p align='center'><img src="images_readme/picture7.png" height="25" /></p>  
 
 where *A* is the adjacency matrix and *D* is a diagonal matrix with degree of vertices on its diagonal.  
 
@@ -66,7 +66,7 @@ where *A* is the adjacency matrix and *D* is a diagonal matrix with degree of ve
 ### Conductance of Graph
 
  - For a graph *G* = (*V*,*E*), conductance of a vertex subset *S* is (number of boundary of *S*) / min( number of vertex in *S*, number of vertex in *V-S* ).  
-<p align='center'><img src="readmeimg/Picture3-2.png" height="150" /></p>
+<p align='center'><img src="images_readme/picture3-2.png" height="150" /></p>
 
  - Conductance of a graph is the smallest conductance of a vertex subset *S* with size < |*V*| / 2 .  
 
@@ -77,15 +77,15 @@ where *A* is the adjacency matrix and *D* is a diagonal matrix with degree of ve
 
 ### Cheeger's Inequality
 
-<p align='center'><img src="readmeimg/Picture5.png" height="40" /></p>  
+<p align='center'><img src="images_readme/picture5.png" height="40" /></p>  
 
 Right side indicates:  
- - Small  <img src="readmeimg/Picture0.png" height="20" />  implies small conductance.  
+ - Small  <img src="images_readme/picture0.png" height="20" />  implies small conductance.  
  - Small conductance implies its corresponding eigenvector provide a good cut.  
 
 
 Left side indicates:  
- - Large  <img src="readmeimg/Picture0.png" height="20" />  implies large conductance.  
+ - Large  <img src="images_readme/picture0.png" height="20" />  implies large conductance.  
  - Large conductance implies that the graph is well-connected and is an expander.  
 
 
@@ -98,23 +98,23 @@ Left side indicates:
 
 ### Introduction
 
-Intuitively, graphs that can be easily divided into two have small  <img src="readmeimg/Picture0.png" height="20" />   :
+Intuitively, graphs that can be easily divided into two have small  <img src="images_readme/picture0.png" height="20" />   :
 
-(See images in the `readmeimg` file.)
+(See images in the `images_readme` file.)
 <p align='center'>
-    <img src="readmeimg/Graph1.png" width="190" />
-    <img src="readmeimg/Graph1-eigval.png" width="190" />
-    <img src="readmeimg/Graph2.png" width="190" />
-    <img src="readmeimg/Graph2-eigval.png" width="190" />
+    <img src="images_readme/graph1.png" width="190" />
+    <img src="images_readme/graph1-eigval.png" width="190" />
+    <img src="images_readme/graph2.png" width="190" />
+    <img src="images_readme/graph2-eigval.png" width="190" />
 </p>  
 
 
-Surprisingly, planar graphs also have small  <img src="readmeimg/Picture0.png" height="20" />  [3] :
+Surprisingly, planar graphs also have small  <img src="images_readme/picture0.png" height="20" />  [3] :
 <p align='center'>
-    <img src="readmeimg/Graph6.png" width="190" />
-    <img src="readmeimg/Graph6-eigval.png" width="190" />
-    <img src="readmeimg/Graph5.png" width="190" />
-    <img src="readmeimg/Graph5-eigval.png" width="190" />
+    <img src="images_readme/graph6.png" width="190" />
+    <img src="images_readme/graph6-eigval.png" width="190" />
+    <img src="images_readme/graph5.png" width="190" />
+    <img src="images_readme/graph5-eigval.png" width="190" />
 </p>  
 
 This fascinating property of planar graphs lead me to the next topic: image partition using the Laplacian of planar graph.  
@@ -127,7 +127,7 @@ This fascinating property of planar graphs lead me to the next topic: image part
 
 ### Image Partition
 
-Implement in `image_partition_L.ipynb`.  
+Implement in `IP-L.ipynb`.  
 
 
 <br>
@@ -139,11 +139,11 @@ The construction is refer to [Professor Spielman's Matlab code](http://www.cs.ya
 
 1. Construct a planar graph on the image.  
 2. Compute the Laplacian.  
-3. Compute  <img src="readmeimg/Picture0.png" height="20" />  and its corresponding eigenvector.  
+3. Compute  <img src="images_readme/picture0.png" height="20" />  and its corresponding eigenvector.  
 4. Divide the image into 2 using the eigenvector.  
     (An eigenvector assigns each vertex/pixel a number, simply puts positive ones to a group and non-positive ones to another.)  
 
-<p align='center'><img src="readmeimg/Picture6.png" width="900" /></p>
+<p align='center'><img src="images_readme/picture6.png" width="900" /></p>
 
 
 
@@ -155,25 +155,25 @@ The construction is refer to [Professor Spielman's Matlab code](http://www.cs.ya
 For the results, the eigenvector cut the down-sampled version of image into 2 parts: the part with read filter and the remain part.
 
 
-`images/cat.jpg`, left: original image, right: result image with size 90 * 140.  
+`images_LP-L/cat.jpg`, left: original image, right: result image with size 90 * 140.  
 <p align='center'>
-    <img src="images/cat.jpg" width="300" />
-    <img src="image_partition_results/cat_eigv2cut.jpg" width="300" />
+    <img src="images_IP-L/cat.jpg" width="300" />
+    <img src="results_IP-L/cat-eigv2cut.jpg" width="300" />
 </p>
 
-`images/fruit3.jpg`, left: original image, right: result image with size 130 * 100.  
+`images_IP-L/fruit3.jpg`, left: original image, right: result image with size 130 * 100.  
 <p align='center'>
-    <img src="images/fruit3.jpg" width="300" />
-    <img src="image_partition_results/fruit3_eigv2cut.jpg" width="300" />
+    <img src="images_IP-L/fruit3.jpg" width="300" />
+    <img src="results_IP-L/fruit3-eigv2cut.jpg" width="300" />
 </p>
 
-`images/fruit4.jpg`, left: original image, right: result image with size 80 * 80.  
+`images_IP-L/fruit4.jpg`, left: original image, right: result image with size 80 * 80.  
 <p align='center'>
-    <img src="images/fruit4.jpg" width="280" />
-    <img src="image_partition_results/fruit4_eigv5cut.jpg" width="280" />
+    <img src="images_IP-L/fruit4.jpg" width="280" />
+    <img src="results_IP-L/fruit4-eigv5cut.jpg" width="280" />
 </p>
 
-See more results in the `image_partition_results` file.
+See more results in `results_IP-L`.
 
 
 
@@ -215,15 +215,15 @@ For a good d-regular expander:
 ***:round_pushpin: Some expanders***
 
 <p align='center'>
-    <img src="readmeimg/Graph7.png" width="275" />
-    <img src="readmeimg/Graph10.png" width="275" />
-    <img src="readmeimg/Graph11.png" width="275" />
+    <img src="images_readme/graph7.png" width="275" />
+    <img src="images_readme/graph10.png" width="275" />
+    <img src="images_readme/graph11.png" width="275" />
 </p>  
 
 <p align='center'>
-    <img src="readmeimg/Graph7-eigval.png" width="275" />
-    <img src="readmeimg/Graph10-eigval.png" width="275" />
-    <img src="readmeimg/Graph10-eigval.png" width="275" />
+    <img src="images_readme/graph7-eigval.png" width="275" />
+    <img src="images_readme/graph10-eigval.png" width="275" />
+    <img src="images_readme/graph11-eigval.png" width="275" />
 </p>  
 
 
@@ -232,7 +232,7 @@ For a good d-regular expander:
 
 ***:round_pushpin: Expander families***
 
-It is useful to construct infinite families of *d*-regular expanders with constants *d* and lower bound of <img src="readmeimg/Picture0.png" height="20" /> .  
+It is useful to construct infinite families of *d*-regular expanders with constants *d* and lower bound of <img src="images_readme/picture0.png" height="20" /> .  
 
 There are 2 strategies that I implement using Matlab, where descriptions are in the following sections.  
 
@@ -243,7 +243,7 @@ There are 2 strategies that I implement using Matlab, where descriptions are in 
 
 ***:round_pushpin: Difficulty***
 
-Since `eigs` become very slow when *n* is large, I use power method with Rayleigh quotient and matrix deflation technique to find  <img src="readmeimg/Picture0.png" height="20" />.  
+Since `eigs` become very slow when *n* is large, I use power method with Rayleigh quotient and matrix deflation technique to find  <img src="images_readme/picture0.png" height="20" />.  
 
 The algorithm can be seen in `expander/myeig.m`.
 
@@ -272,7 +272,7 @@ Connected vertex (a,b) to (a+1,b), (a-1,b), (a,b+1), (a,b-1), (a+b,b), (a-b,b), 
 
 The graph is a 8-regular graph with multi-edges and self-loops.
 
-One can prove that there exist a constant *c > 0* such that <img src="readmeimg/Picture0.png" height="20" /> is larger than *c*  for all *n*. [2]
+One can prove that there exist a constant *c > 0* such that <img src="images_readme/picture0.png" height="20" /> is larger than *c*  for all *n*. [2]
 
 
 
@@ -289,18 +289,18 @@ One can prove that there exist a constant *c > 0* such that <img src="readmeimg/
 
 
 <p align='center'>
-    <img src="expander_results/M-n12.png" width="275" />
-    <img src="expander_results/M-n24.png" width="275" />
-    <img src="expander_results/M-n32.png" width="275" />
+    <img src="results_M_expander/n12.png" width="275" />
+    <img src="results_M_expander/n24.png" width="275" />
+    <img src="results_M_expander/n32.png" width="275" />
 </p>
 
 <p align='center'>
-    <img src="expander_results/M-n12-eigval.png" width="275" />
-    <img src="expander_results/M-n24-eigval.png" width="275" />
-    <img src="expander_results/M-n32-eigval.png" width="275" />
+    <img src="results_M_expander/n12-eigval.png" width="275" />
+    <img src="results_M_expander/n24-eigval.png" width="275" />
+    <img src="results_M_expander/n32-eigval.png" width="275" />
 </p>
 
-See images in the `expander_results` file.
+See images in `results_M_expander`.
 
 
 
@@ -309,7 +309,7 @@ See images in the `expander_results` file.
 
 ***:round_pushpin: Comparison***
 
-Since the Marguli-Gabber-Galil expander only add a few edges to each vertex of the grid graph and is a 8-regular graph, I think it interesting to compare <img src="readmeimg/Picture0.png" height="20" /> of the grid graph, the random 8-regular graph, and the Marguli-Gabber-Galil expander.
+Since the Marguli-Gabber-Galil expander only add a few edges to each vertex of the grid graph and is a 8-regular graph, I think it interesting to compare <img src="images_readme/picture0.png" height="20" /> of the grid graph, the random 8-regular graph, and the Marguli-Gabber-Galil expander.
 
 
 | number of vertex | Grid graph | Marguli-Gabber-Galil expander | Random 8-regular graph |
