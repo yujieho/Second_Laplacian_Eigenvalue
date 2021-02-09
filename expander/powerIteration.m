@@ -1,4 +1,4 @@
-function [eigvec,eigval,itrnum] = power_iteration(A)
+function [eigval,eigvec,i] = poweriteration(A)
 % -------------------------------------------------------------------
 %  
 %  Author:         YU-JIE, HO 
@@ -8,24 +8,21 @@ function [eigvec,eigval,itrnum] = power_iteration(A)
 %  
 %  Return a eigenvalue and its eigenvector using power iteration
 %  and Rayleigh quotient.
-%  itrnum is the number of iretation to which eigval converge.
+%  i is the number of iretation to which eigval converge.
 %
 % -------------------------------------------------------------------
 
 itr    = 150;
-itrnum = 0;
 eigval = 10;
 eigvec = [1;1;1;zeros(length(A)-3,1)];
+
 threshold = 1e-4;
 
 for i = 1:itr,
-    itrnum = i;
     neweigvec = A*eigvec;
-    eigvec = neweigvec / max(neweigvec);
+    eigvec    = neweigvec / max(neweigvec);
     
     eigvalnew = (eigvec'*A*eigvec) / ((eigvec'*eigvec));
-    disp(eigvalnew)
-
     
     if abs(eigvalnew - eigval) < threshold,
         break;

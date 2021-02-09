@@ -1,4 +1,4 @@
-function [L,eigvec2,eigval2,itrnum] = myeig(A)
+function [eigval2,eigvec2,itrnum] = myeig(A)
 % -------------------------------------------------------------------
 %  
 %  Author:         YU-JIE, HO 
@@ -6,8 +6,8 @@ function [L,eigvec2,eigval2,itrnum] = myeig(A)
 %  MATLAB version: 9.4.0.813654 (R2018a)
 %  Discriptions:
 %  
-%  Compute the second smallest normalized Laplacian eigenvalue and 
-%  its eigenvector using householder deflation and power iteration.
+%  Compute the second largest normalized adjacency eigenvalue 
+%  using Wielandt deflation and power iteration with Rayleigh quotient.
 %
 %  The matrix Q is related to the normalized Laplacian L, where 
 %  the eigval(L) = 1 - eigval(Q), and 
@@ -16,19 +16,12 @@ function [L,eigvec2,eigval2,itrnum] = myeig(A)
 % -------------------------------------------------------------------
 
 eigvec1 = sqrt(sum(A))';
-
-D = spdiags(1./eigvec1,0,length(A),length(A));
-Q = D*A*D;
-L = speye(length(A)) - Q;
+eigvec1 = eigvec1 / norm(eigvec1);
 
 
 % Wielandt deflation
-eigvec1 = eigvec1 / norm(eigvec1);
-N = Q - 1.*eigvec1*eigvec1';
-
+N = A - eigvec1*eigvec1';
 
 
 % rayleigh quotient iteration
-[eigvec2,eigval2,itrnum] = power_iteration(N);
-
-eigval2 = 1 - eigval2;
+[eigval2, eigvec2, itrnum] = poweriteration(N);

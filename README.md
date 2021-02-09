@@ -8,19 +8,17 @@ This project reveals the relationship between  <img src="images_readme/picture0.
 
 ## Contents
 - [Introduction](#Introduction)
-
     - [Normalized Laplacian](#Normalized-Laplacian)
     - [Eigenvalue of Normalized Laplacian](#Eigenvalue-of-Normalized-Laplacian)
     - [Conductance of Graph](#Conductance-of-Graph)
     - [Cheeger's Inequality](#Cheeger's-Inequality)
 
 - [Small Second Eigenvalue](#Small-Second-Eigenvalue) 
-
     - [Image Partition](#Image-Partition)
 
 - [Large Second Eigenvalue](#Large-Second-Eigenvalue) 
-
-    - [The Marguli-Gabber-Galil Expander Construction](#The-Marguli-Gabber-Galil-Expander-Construction)  
+    - [Algebraic Construction](#Algebraic-Construction)  
+    - [Combinatorial Construction](#Combinatorial-Construction)  
 
 - [References](#References)
 
@@ -37,8 +35,7 @@ This project reveals the relationship between  <img src="images_readme/picture0.
 
 where *A* is the adjacency matrix and *D* is a diagonal matrix with degree of vertices on its diagonal.  
 
- - Symmetric, singular, positive semidefinite. 
-
+ - Symmetric, singular, positive semidefinite.  
  - Measure the smoothness of a vector *x*.  
 
 
@@ -48,13 +45,8 @@ where *A* is the adjacency matrix and *D* is a diagonal matrix with degree of ve
 ### Eigenvalue of Normalized Laplacian
 
  - Eigenvalues are between 0 and 2.  
-
- - The smallest eigenvalue of Laplacian is always equal to 0, and its eigenvector is the all-one vector.
-
- - The multiplicity of the 0 eigenvalue is equal to the number of connected component a graph has.  
-
- - The second smallest eigenvalue is 0 iff the graph is disconnected.
-
+ - The smallest eigenvalue of Laplacian is always equal to 0, and its eigenvector is the all-one vector.  
+ - The multiplicity of the 0 eigenvalue is equal to the number of connected component a graph has.   
  - The largest eigenvalue is 2 iff a graph is bipartite.  
 
 
@@ -68,7 +60,7 @@ where *A* is the adjacency matrix and *D* is a diagonal matrix with degree of ve
  - For a graph *G* = (*V*,*E*), conductance of a vertex subset *S* is (number of boundary of *S*) / min( number of vertex in *S*, number of vertex in *V-S* ).  
 <p align='center'><img src="images_readme/picture3-2.png" height="150" /></p>
 
- - Conductance of a graph is the smallest conductance of a vertex subset *S* with size < |*V*| / 2 .  
+ - Conductance of a graph is the smallest conductance of vertex subset *S* with size < |*V*| / 2 .  
 
 
 
@@ -81,7 +73,7 @@ where *A* is the adjacency matrix and *D* is a diagonal matrix with degree of ve
 
 Right side indicates:  
  - Small  <img src="images_readme/picture0.png" height="20" />  implies small conductance.  
- - Small conductance implies its corresponding eigenvector provide a good cut.  
+ - Small conductance implies that its corresponding eigenvector provide a good cut.  
 
 
 Left side indicates:  
@@ -155,19 +147,19 @@ The construction is refer to [Professor Spielman's Matlab code](http://www.cs.ya
 For the results, the eigenvector cut the down-sampled version of image into 2 parts: the part with read filter and the remain part.
 
 
-`images_LP-L/cat.jpg`, left: original image, right: result image with size 90 * 140.  
+`images_LP-L/cat.jpg`. Left: original image. Right: result image, size: 90 * 140.  
 <p align='center'>
     <img src="images_IP-L/cat.jpg" width="300" />
     <img src="results_IP-L/cat-eigv2cut.jpg" width="300" />
 </p>
 
-`images_IP-L/fruit3.jpg`, left: original image, right: result image with size 130 * 100.  
+`images_IP-L/fruit3.jpg`. Left: original image. Right: result image, size: 130 * 100.  
 <p align='center'>
     <img src="images_IP-L/fruit3.jpg" width="300" />
     <img src="results_IP-L/fruit3-eigv2cut.jpg" width="300" />
 </p>
 
-`images_IP-L/fruit4.jpg`, left: original image, right: result image with size 80 * 80.  
+`images_IP-L/fruit4.jpg`. Left: original image. Right: result image, size: 80 * 80.  
 <p align='center'>
     <img src="images_IP-L/fruit4.jpg" width="280" />
     <img src="results_IP-L/fruit4-eigv5cut.jpg" width="280" />
@@ -198,15 +190,25 @@ Various ways to have a clearer contour:
 
 ### Introduction
 
-For a good d-regular expander:
+Expander graphs have various theories in mathematics and applications in computer science.  
 
- - Every vertex subset has many neighbors, by the definition of the conductance.  
+A 'good' expander graph is a graph with few edges but still well-connected.  
 
- - It has few edges compare to the number of its vertices.  
+I will introduce some properties and explicit constructions of a good d-regular expander.  
 
- - It is a sparsification of the complete graph. That is, they have similar spectrums of eigenvalues and eigenvectors, but the expander has much less edges.  
 
- - It acts like a random graph when it has many vertices, by the expander mixing lemma.  
+
+<br>
+
+***:round_pushpin: Properties***
+
+- Every vertex subset has many neighbors, by the definition of the conductance.  
+
+- It is a sparsification of the complete graph. That is, they have similar spectrums of eigenvalues and eigenvectors, but the expander has much less edges.  
+
+- It acts like a random d-regular graph when it has many vertices, by the mixing lemma.  
+
+- A random walk on it converges quickly to the stationary distribution, by the random walk lemma.  
 
 
 
@@ -230,11 +232,15 @@ For a good d-regular expander:
 
 <br>
 
-***:round_pushpin: Expander families***
+***:round_pushpin: Expander family***
 
-It is useful to construct infinite families of *d*-regular expanders with constants *d* and lower bound of <img src="images_readme/picture0.png" height="20" /> .  
+An infinite family Gn of d-regular graphs with second Laplacian eigenvalue bounded from below by a constant c, where d and c are independent of n.  
 
-There are 2 strategies that I implement using Matlab, where descriptions are in the following sections.  
+Constructing such family is useful in computer science.
+
+In `expander`, I implements 2 strategies using Matlab, one is algebraic and the other is combinatorial.  
+
+Descriptions are in the following subsections.
 
 
 
@@ -252,11 +258,26 @@ The algorithm can be seen in `expander/myeig.m`.
 
 <br>
 
-### The Marguli-Gabber-Galil Expander Construction
+### Algebraic construction
 
-Implement in `expander` file.  
+Constructing the Margulis–Gabber–Galil expander.
 
-This is a simple explicit construction of an infinite family of 8-regular expanders.  
+- Simple to construct.  
+- Hard to analyze the expansion via second eigenvalue.  
+
+
+
+<br>
+
+***:round_pushpin: Properties***
+
+
+For a given *n*:
+
+- The graph has *n* x *n* vertices.  
+- The graph is 8-regular.  
+- The graph has multi-edges and self-loops.  
+- There exist a constant *c > 0* such that <img src="images_readme/picture0.png" height="20" /> is larger than *c*  for all *n*. [2] 
 
 
 
@@ -264,15 +285,19 @@ This is a simple explicit construction of an infinite family of 8-regular expand
 
 ***:round_pushpin: Framework***
 
-For a given *n*, construct a graph with *n x n* vertices.  
+A vertex is a pair from {0, 1, ..., n-1} x {0, 1, ..., n-1}.
 
-Consider a vertex as a pair from {0,...,*n* − 1} × {0,...,*n* − 1}, where the group operation is coordinate-wise addition modulo *n*.  
+The group operation is coordinate-wise addition modulo n.
 
-Connected vertex (a,b) to (a+1,b), (a-1,b), (a,b+1), (a,b-1), (a+b,b), (a-b,b), (a,b+a), (a,b-a).  
+Connected vertex (a,b) to:
 
-The graph is a 8-regular graph with multi-edges and self-loops.
+- (a+-1,b)  
+- (a,b+-1)  
+- (a+-b,b)  
+- (a,b+-a)  
 
-One can prove that there exist a constant *c > 0* such that <img src="images_readme/picture0.png" height="20" /> is larger than *c*  for all *n*. [2]
+
+The algorithm can be seen in `expander/Margulis.m`.
 
 
 
@@ -323,6 +348,30 @@ The random graphs seems to be better expanders than the Marguli-Gabber-Galil exp
 This is reasonable since the Marguli-Gabber-Galil expanders have many multi-edges.
 
 
+
+
+
+
+<br>
+
+### Combinatorial construction
+
+Constructing expanders using zig-zag product and tensor product.
+
+- Based on iterations.  
+- Simple to analyze the expansion via second eigenvalue.  
+
+
+<br>
+
+***:round_pushpin: Framework of zig-zag product***
+
+For a *d*-regular graph H with *h* vertices, and a *h*-regular graph G with *g* vertices:
+
+1. Multiple vertices of H to each vertex of G, i.e., forming *g* clouds, each cloud has *h* vertices.  
+2. Take a step in one cloud.
+3. Take a step to another cloud.
+4. Take a step in the new cloud.
 
 
 
