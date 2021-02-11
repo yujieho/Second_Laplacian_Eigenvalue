@@ -1,12 +1,16 @@
-function A = marguli(n)
+function A = margulis(n)
 % -------------------------------------------------------------------
 %  
-%  A is the normalized adjacency matrix of Marguli-Gabber-Galil Expander.
+%  Author:         YU-JIE, HO 
+%  Date:           28-May-2020
+%  MATLAB version: 9.4.0.813654 (R2018a)
+%  Discriptions:
+%  
+%  For a given n, A is the n*n normalized adjacency matrix of 
+%  Margulis-Gabber-Galil Expander.
 %  
 %  For a vertex (a,b), it is connect to
 %  (a, b+-1), (a+-1, b), (a, b+-a), (a+-b, b).
-%  
-%  This graph has multi-edges and self-loops.
 %  
 % -------------------------------------------------------------------
 
@@ -31,20 +35,14 @@ for i=1:n*n
     aj(4,i) = tmy + n*mod(tmx+tmy,n) + 1;
 
 end
+
 ai = ai(:)';
 aj = aj(:)';
 
-
 A = sparse(ai,aj,av,n*n,n*n);
-
 
 % the subtraction part
 A = A + A';
 
-
 % normalize
 A = A./8;
-
-end
-
-

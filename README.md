@@ -17,6 +17,7 @@ This project reveals the relationship between  <img src="images_readme/picture0.
     - [Image Partition](#Image-Partition)
 
 - [Large Second Eigenvalue](#Large-Second-Eigenvalue) 
+    - [Expander](#Expander)
     - [Algebraic Construction](#Algebraic-Construction)  
     - [Combinatorial Construction](#Combinatorial-Construction)  
 
@@ -45,8 +46,11 @@ where *A* is the adjacency matrix and *D* is a diagonal matrix with degree of ve
 ### Eigenvalue of Normalized Laplacian
 
  - Eigenvalues are between 0 and 2.  
+
  - The smallest eigenvalue of Laplacian is always equal to 0, and its eigenvector is the all-one vector.  
+ 
  - The multiplicity of the 0 eigenvalue is equal to the number of connected component a graph has.   
+ 
  - The largest eigenvalue is 2 iff a graph is bipartite.  
 
 
@@ -116,18 +120,18 @@ This fascinating property of planar graphs lead me to the next topic: image part
 
 
 <br>
+<br>
+<br>
 
 ### Image Partition
 
 Implement in `IP-L.ipynb`.  
 
-
 <br>
 
 ***:round_pushpin: Framework***
 
-The construction is refer to [Professor Spielman's Matlab code](http://www.cs.yale.edu/homes/spielman/sgta/), where also provides a fascinating talk of Spectral Graph Theory.  
-
+The construction is refer to [Professor Spielman's MATLAB code](http://www.cs.yale.edu/homes/spielman/sgta/), where also provides a fascinating talk of Spectral Graph Theory.  
 
 1. Construct a planar graph on the image.  
 2. Compute the Laplacian.  
@@ -188,11 +192,13 @@ Various ways to have a clearer contour:
 ## Large Second Eigenvalue
 
 
-### Introduction
+### Expander
 
-Expander graphs have various theories in mathematics and applications in computer science.  
+A graph with large second eigenvalue is an expander.   
 
-A 'good' expander graph is a graph with few edges but still well-connected.  
+A 'good' expander is a graph with few edges but still well-connected.  
+
+Good expanders have various theories in mathematics and applications in computer science. 
 
 I will introduce some properties and explicit constructions of a good d-regular expander.  
 
@@ -217,30 +223,29 @@ I will introduce some properties and explicit constructions of a good d-regular 
 ***:round_pushpin: Some expanders***
 
 <p align='center'>
-    <img src="images_readme/graph7.png" width="275" />
-    <img src="images_readme/graph10.png" width="275" />
-    <img src="images_readme/graph11.png" width="275" />
+    <img src="images_readme/graph7.png" width="280" />
+    <img src="images_readme/graph10.png" width="280" />
 </p>  
 
 <p align='center'>
-    <img src="images_readme/graph7-eigval.png" width="275" />
-    <img src="images_readme/graph10-eigval.png" width="275" />
-    <img src="images_readme/graph11-eigval.png" width="275" />
+    <img src="images_readme/graph7-eigval.png" width="280" />
+    <img src="images_readme/graph10-eigval.png" width="280" />
+
 </p>  
 
 
 
 <br>
 
-***:round_pushpin: Expander family***
+***:round_pushpin: Construct expander family***
 
-An infinite family Gn of d-regular graphs with second Laplacian eigenvalue bounded from below by a constant c, where d and c are independent of n.  
+Expander family is an infinite family Gn of d-regular graphs with second Laplacian eigenvalue bounded from below by a positive constant c, where d and c are independent of n.  
 
 Constructing such family is useful in computer science.
 
-In `expander`, I implements 2 strategies using Matlab, one is algebraic and the other is combinatorial.  
+In `expander`, I implements 2 strategies using MATLAB, one is algebraic and the other is combinatorial.  
 
-Descriptions are in the following subsections.
+Descriptions are in the following sections.
 
 
 
@@ -249,7 +254,7 @@ Descriptions are in the following subsections.
 
 ***:round_pushpin: Difficulty***
 
-Since `eigs` become very slow when *n* is large, I use power method with Rayleigh quotient and matrix deflation technique to find  <img src="images_readme/picture0.png" height="20" />.  
+Since `eigs` become very slow when *n* is large, I use power method with Rayleigh quotient and matrix deflation technique to find  <img src="images_readme/picture0.png" height="20" /> after the construction.  
 
 The algorithm can be seen in `expander/myeig.m`.
 
@@ -257,10 +262,12 @@ The algorithm can be seen in `expander/myeig.m`.
 
 
 <br>
+<br>
+<br>
 
 ### Algebraic construction
 
-Constructing the Margulis–Gabber–Galil expander.
+Constructing the Margulis–Gabber–Galil expander. 
 
 - Simple to construct.  
 - Hard to analyze the expansion via second eigenvalue.  
@@ -277,7 +284,7 @@ For a given *n*:
 - The graph has *n* x *n* vertices.  
 - The graph is 8-regular.  
 - The graph has multi-edges and self-loops.  
-- There exist a constant *c > 0* such that <img src="images_readme/picture0.png" height="20" /> is larger than *c*  for all *n*. [2] 
+- There exist a constant *c > 0* such that <img src="images_readme/picture0.png" height="20" /> is larger than *c*  for all *n*. [2, lecture 18] 
 
 
 
@@ -305,76 +312,181 @@ The algorithm can be seen in `expander/Margulis.m`.
 
 ***:round_pushpin: Demonstration***
 
-
-	n = 12, eigval2 = 0.1316  
-	n = 24, eigval2 = 0.073992  
-	n = 32, eigval2 = 0.062304  
-	n = 64, eigval2 = 0.046192  
-	n = 100, eigval2 = 0.040619  
+	n = 12, eigval2 = 0.11339  
+	n = 24, eigval2 = 0.067516  
+	n = 36, eigval2 = 0.054649  
+	n = 60, eigval2 = 0.044917  
+	n = 100, eigval2 = 0.041554  
+    n = 120, eigval2 = 0.040094  
 
 
 <p align='center'>
-    <img src="results_M_expander/n12.png" width="275" />
-    <img src="results_M_expander/n24.png" width="275" />
-    <img src="results_M_expander/n32.png" width="275" />
+    <img src="results_M_expander/n12.png" width="280" />
+    <img src="results_M_expander/n24.png" width="280" />
 </p>
 
 <p align='center'>
-    <img src="results_M_expander/n12-eigval.png" width="275" />
-    <img src="results_M_expander/n24-eigval.png" width="275" />
-    <img src="results_M_expander/n32-eigval.png" width="275" />
+    <img src="results_M_expander/n12-eigval.png" width="280" />
+    <img src="results_M_expander/n24-eigval.png" width="280" />
 </p>
 
-See images in `results_M_expander`.
+See results in `results_M_expander`.
+
+
 
 
 
 
 <br>
-
-***:round_pushpin: Comparison***
-
-Since the Marguli-Gabber-Galil expander only add a few edges to each vertex of the grid graph and is a 8-regular graph, I think it interesting to compare <img src="images_readme/picture0.png" height="20" /> of the grid graph, the random 8-regular graph, and the Marguli-Gabber-Galil expander.
-
-
-| number of vertex | Grid graph | Marguli-Gabber-Galil expander | Random 8-regular graph |
-| :----------------  | :----------------: | :----------------: | :----------------: |
-| 12*12 | 0.0669 | 0.1316 | 0.3817 |
-| 24*24 | 0.0170 | 0.0739 | 0.3462 |
-
-
-The random graphs seems to be better expanders than the Marguli-Gabber-Galil expanders.  
-
-This is reasonable since the Marguli-Gabber-Galil expanders have many multi-edges.
-
-
-
-
-
-
+<br>
 <br>
 
 ### Combinatorial construction
 
-Constructing expanders using zig-zag product and tensor product.
+Constructing expanders using zig-zag product and tensor product.  
+The algorithms are refer to the descriptions in [4].
 
 - Based on iterations.  
 - Simple to analyze the expansion via second eigenvalue.  
 
 
+
+
 <br>
 
-***:round_pushpin: Framework of zig-zag product***
+#### **:round_pushpin: The zig-zag product**
 
-For a *d*-regular graph H with *h* vertices, and a *h*-regular graph G with *g* vertices:
+Implement in `expander/zigzagproduct.m`.
 
-1. Multiple vertices of H to each vertex of G, i.e., forming *g* clouds, each cloud has *h* vertices.  
-2. Take a step in one cloud.
-3. Take a step to another cloud.
-4. Take a step in the new cloud.
+<br>
+
+***Framework***
+
+For a *d*-regular graph H with *h* vertices, and a *h*-regular graph G with *n* vertices, construct the graph <img src="images_readme/picture8.png" height="20" /> by:
+
+1. Replace each vertex of G with H, i.e., forming *n* clouds, each cloud has *h* vertices.  
+2. Edges form between 2 vertices if they can reach each other by taking 3 steps:  
+
+    a. A step in one cloud. (zig)  
+    b. A step to another cloud.  
+    c. A step in the new cloud. (zag)
+
+One need to number the vertices in H and think of them as the edge indices of a vertex in G.
+
+A step in a cloud is taken at an edge in H.  
+For instance, consider 2 vertices, say 1 and 2. If (1,2) is an edge in H, then a step can form between the 1st and 2nd vertices in a cloud.
+
+A step between clouds is taken at where the edge indices and the vertices indices coincides.  
+For instance, consider 2 clouds, say u and v. If v is the 5th neighbor of u, and u is the 2nd neighbor of v, then a step can form between the 5th vertex in u and the 2nd vertex in v.  
+
+
+<br>
+
+***Properties***
+
+The graph  <img src="images_readme/picture8.png" height="20" />:
+
+- It is *d*^2-regular.
+- It has *h* x *n* vertices.
+- eigenvalue
 
 
 
+<br>
+
+***Example***
+
+<p align='center'>
+    <img src="results_zigzag/demo-zigzag-g0.png" width="275" />
+    <img src="results_zigzag/demo-zigzag-g1.png" width="275" />
+    <img src="results_zigzag/demo-zigzag-g2.png" width="275" />
+</p>
+
+
+
+<br>
+
+#### **:round_pushpin: The recursion**
+
+Since the basic graph is large, the following graphs quickly exceeds maximum array size preference of MATLAB.  
+
+Thus, I did not write a code for the recursion, but I will state the properties and framework of it.
+
+<br>
+
+***Framework***
+
+1. Construct a basic graph G_0, it is *d*-regular and has *d*^8 vertices.  
+2. Define G_1 to be the square of G_0.  
+3. Define G_2 to be the tensor product of G_0 with itself.  
+4. For t > 2, define G_t by  
+<p align='center'><img src="images_readme/picture10.png" height="25" /></p>  
+
+
+<br>
+
+***Properties***
+
+The graph G_t:
+
+- It is *d*^2-regular.
+- It has *d*^{8t} vertices.
+- eigenvalue
+
+
+
+
+<br>
+
+#### **:round_pushpin: The basic graph**
+
+Implement in `expander/affineplane.m`.  
+
+It should be a very good expander. Here I used the affine plane.  
+
+To make an affine plane the basic graph for recursion, one need to choose a sufficiently large *q* and zig-zag product it for 7 times.
+
+<br>
+
+***:round_pushpin: Properties of affine plane***
+
+For a given prime power *q*, the affine plane:
+
+- It is *q*-regular.  
+- It has *q* x *q* vertices.  
+- It has self-loops.  
+- The second smallest eigenvalue is 1/*q*^{1/2}.
+
+
+
+<br>
+
+***:round_pushpin: Framework of constructing affine plane***
+
+A vertex is a pair from the field  <img src="images_readme/picture9.png" height="25" />.
+
+Connected vertex (a, b) to all the points on the line y = ax - b.  
+
+
+
+<br>
+
+***Example***
+
+<p align='center'>
+    <img src="results_zigzag/demo-affineplane-q5.png" width="280" />
+    <img src="results_zigzag/demo-affineplane-q9.png" width="280" />
+</p>
+
+
+
+<br>
+
+#### **:round_pushpin: Second eigenvalue**
+
+For the construction to have good results (say, second eigenvalue > 4/5), the basic graph and thus the expander family have rather large degree.  
+
+Since the basic graph is large in size, I will not display graphs G(t). However, I will show the second eigenvalues of them.  
 
 
 
@@ -384,4 +496,5 @@ For a *d*-regular graph H with *h* vertices, and a *h*-regular graph G with *g* 
 ## References
 [1] [Course: Spectral Graph Theory, Daniel A. Spielman, Yale.](http://www.cs.yale.edu/homes/spielman/561/syllabus.html)  
 [2] [Course: Graph Partitioning, Expanders and Spectral Methods, Luca Trevisan, UC Berkeley.](https://people.eecs.berkeley.edu/~luca/expanders2016/)  
-[3] Spectral partitioning works: Planar graphs and finite element meshes, Daniel A. Spielman and Shang-Hua Teng, Linear Algebra and its Applications, 421:284–305, 2007.
+[3] Spectral partitioning works: Planar graphs and finite element meshes. Daniel A. Spielman and Shang-Hua Teng. Linear Algebra and its Applications, 421:284–305, 2007.  
+[4] Entropy Waves, the Zig-Zag Graph Product, and New Constant-Degree Expanders and Extractors. O. Reingold, S. Vadhan, and A. Wigderson. Annals of Math- ematics, Vol. 155 (1), pages 157–187, 2001. Preliminary version in 41st FOCS, pages 3–13, 2000.

@@ -5,22 +5,24 @@
 %  MATLAB version: 9.4.0.813654 (R2018a)
 %  Discriptions:
 %  
-%  Construct the Marguli-Gabber-Galil expander with n*n vertices.
+%  Construct the n*n Margulis-Gabber-Galil expander.
 %  Compute its k smallest eigenvalues.
 % 
 % -------------------------------------------------------------------
 
-n = 5;
+n = 12;
 k = 10;
 
 
 
-% adjacency matrix of Marguli expander
-A = marguli(n);
+% adjacency matrix of Margulis expander
+A = margulis(n);
+
 
 
 % second smallest eigvalue of normalized Laplacian matrix
 [eigval2, eigvec2, itrnum] = myeig(A);
+
 leigval2 = 1 - eigval2;
 
 
@@ -33,7 +35,19 @@ leigvals  = eigs(L,k,'sm');
 
 % plot the graph and the eigenvalues
 G = graph(A,'OmitSelfLoops');
-plotgraph(G,n);
-ploteigval(leigvals,leigval2);
 
+gtitle = ['The ' num2str(n) '*' num2str(n) ' Margulis–Gabber–Galil Expander'];
 
+gx = repmat(1:n,n,1)';
+gy = repmat(1:n,n,1);
+
+for i=1:n
+    gx(:,i) = circshift(gx(:,i),1-i);
+end
+
+gx = gx(:)';
+gy = gy(:)';
+
+plotgraph(G,gx,gy,gtitle);
+
+ploteigval(leigvals,leigval2,k);

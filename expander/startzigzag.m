@@ -5,18 +5,28 @@
 %  MATLAB version: 9.4.0.813654 (R2018a)
 %  Discriptions:
 %  
-%  Construct expanders using the zig-zag product construction.
+%  Construct expander families using the zig-zag product construction.
 % 
 % -------------------------------------------------------------------
 
-q = 3;
-itr = 3;
+q     = 25;
+itrap = 7;
+itrzz = 5;
 
 
-G0 = basicgraph(q);
-G1 = tensorproduct(G0);
+% construct the basic graph, APt, which is q^2-regular and has q^16 vertices.
+AP0 = affineplane(q);
+AP1 = tensorproduct(AP0);
 
-Gt = G1;
-for i=2:itr
-    Gt = zigzagproduct(Gt,G0,q);
+APt = AP1;
+
+for i=2:itrap
+    APt = zigzagproduct(APt,AP0,q);
 end
+
+
+% 
+% % construct a expander family
+% A0 = APt;
+% A1 = A0*A0;
+% A2 = tensorproduct(A0);

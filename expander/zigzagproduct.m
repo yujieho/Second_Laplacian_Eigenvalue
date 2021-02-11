@@ -15,7 +15,6 @@ h = length(H);
 [hj, hi, hv] = find(H);
 
 
-% edges in each cloud
 
 ai = zeros(h*q,g);
 aj = zeros(h*q,g);
@@ -26,12 +25,10 @@ for i=0:g-1,
     aj(:,i+1) = hj + h*i;
 end
 
+% edges in each cloud
 A = sparse(ai,aj,av,g*h,g*h);
 
 
-
-
-% crossing the clouds
 
 bi = 1:g*h;
 bj = 1:g*h;
@@ -50,11 +47,10 @@ for i=1:g*h
     end
 end
 
+% crossing the clouds
 B = sparse(bi,bj,bv,g*h,g*h);
 
 
 
 % zig-zag product
 Z = A*B*A;
-
-end
