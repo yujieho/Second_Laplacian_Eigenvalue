@@ -343,8 +343,7 @@ See results in `results_M_expander`.
 
 ### Combinatorial construction
 
-Constructing expanders using zig-zag product and tensor product.  
-The algorithms are refer to the descriptions in [4].
+Constructing expanders using zig-zag product and tensor product. [4]  
 
 - Based on iterations.  
 - Simple to analyze the expansion via second eigenvalue.  
@@ -408,12 +407,6 @@ The graph  <img src="images_readme/picture8.png" height="20" />:
 
 #### **:round_pushpin: The recursion**
 
-Since the basic graph is large, the following graphs quickly exceeds maximum array size preference of MATLAB.  
-
-Thus, I did not write a code for the recursion, but I will state the properties and framework of it.
-
-<br>
-
 ***Framework***
 
 1. Construct a basic graph G_0, it is *d*-regular and has *d*^8 vertices.  
@@ -421,6 +414,15 @@ Thus, I did not write a code for the recursion, but I will state the properties 
 3. Define G_2 to be the tensor product of G_0 with itself.  
 4. For t > 2, define G_t by  
 <p align='center'><img src="images_readme/picture10.png" height="25" /></p>  
+
+<br>
+
+For G_t to be good expanders (say, second eigenvalue > 4/5), the basic graph should be a very good expander and *d* should be sufficiently large.  
+
+This means that G_t quickly exceeds maximum array size preference of MATLAB, so I did not write a code for the recursion.  
+
+Instead, I will state how G_t looks like.  
+
 
 
 <br>
@@ -442,30 +444,41 @@ The graph G_t:
 
 Implement in `expander/affineplane.m`.  
 
-It should be a very good expander. Here I used the affine plane.  
+<br>
 
-To make an affine plane the basic graph for recursion, one need to choose a sufficiently large *q* and zig-zag product it for 7 times.
+***Framework***
+
+Construct the basic graph by:
+
+1. Construct an affine plane AP_0.  
+2. Define AP_1 to be the tensor product of AP_0 with itself.  
+3. Define AP_{t+1} to be the zig-zag product of AP_t and AP_0, for t = 1, 2, ..., 7.  
+
+AP_8 is what we want for the basic graph.
 
 <br>
 
-***:round_pushpin: Properties of affine plane***
+Construct the affine plane by:
+
+- A vertex is a pair from the field  <img src="images_readme/picture9.png" height="25" />.
+- Connected vertex (a, b) to all the points on the line y = ax - b.   
+
+<br>
+
+***Properties of affine plane***
 
 For a given prime power *q*, the affine plane:
 
 - It is *q*-regular.  
 - It has *q* x *q* vertices.  
 - It has self-loops.  
-- The second smallest eigenvalue is 1/*q*^{1/2}.
+- The second eigenvalue is 1/*q*^{1/2}.
+
+Thus, the basic graph AP_8 will be *q*^2-regular, *q*^16 vertices, and has second eigenvalue  .
 
 
 
 <br>
-
-***:round_pushpin: Framework of constructing affine plane***
-
-A vertex is a pair from the field  <img src="images_readme/picture9.png" height="25" />.
-
-Connected vertex (a, b) to all the points on the line y = ax - b.  
 
 
 
@@ -477,16 +490,6 @@ Connected vertex (a, b) to all the points on the line y = ax - b.
     <img src="results_zigzag/demo-affineplane-q5.png" width="280" />
     <img src="results_zigzag/demo-affineplane-q9.png" width="280" />
 </p>
-
-
-
-<br>
-
-#### **:round_pushpin: Second eigenvalue**
-
-For the construction to have good results (say, second eigenvalue > 4/5), the basic graph and thus the expander family have rather large degree.  
-
-Since the basic graph is large in size, I will not display graphs G(t). However, I will show the second eigenvalues of them.  
 
 
 
