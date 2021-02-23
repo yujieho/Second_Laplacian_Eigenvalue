@@ -379,15 +379,14 @@ Note that the inequality is tighter and more beautiful if one consider the spect
 ***:round_pushpin: Examples***
 
 <p align='center'>
-    <img src="results_zigzag/demo-zigzag-g0.png" width="300" />
-    <img src="results_zigzag/demo-zigzag-g1.png" width="300" />
-    <img src="results_zigzag/demo-zigzag-g2.png" width="300" />
+    <img src="results_zigzag/demo-zigzag-g0.png" width="275" />
+    <img src="results_zigzag/demo-zigzag-g1.png" width="275" />
+    <img src="results_zigzag/demo-zigzag-g2.png" width="275" />
 </p>
-
 <p align='center'>
-    <img src="results_zigzag/demo-zigzag-g0-eigval.png" width="300" />
-    <img src="results_zigzag/demo-zigzag-g1-eigval.png" width="300" />
-    <img src="results_zigzag/demo-zigzag-g2-eigval.png" width="300" />
+    <img src="results_zigzag/demo-zigzag-g0-eigval.png" width="275" />
+    <img src="results_zigzag/demo-zigzag-g1-eigval.png" width="275" />
+    <img src="results_zigzag/demo-zigzag-g2-eigval.png" width="275" />
 </p>
 
 <br>
