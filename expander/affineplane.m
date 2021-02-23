@@ -1,9 +1,10 @@
 function A = affineplane(q)
 % -------------------------------------------------------------------
 %  
-%  Construct a graph A for the basic graph in the zig-zag product construction.
+%  Construct a graph for the base graph.
 %  Here A is the normalized adjacency matrix of the affine plane.
-%  A is a (q*q, q, 1/q^{1/2})-graph.
+%  A has q*q vertices, q-regular, and has second largest eigenvalue 
+%  (in absolute value) 1/q^{1/2}.
 %  A has self-loops.
 % 
 % -------------------------------------------------------------------

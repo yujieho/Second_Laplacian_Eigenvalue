@@ -10,7 +10,7 @@ f = plot(eigvals);
 
 axis([1 k 0 2])
 
-title(['Exact eigval2 = ' num2str(eigvals(2)) ', Guess eigval2 = ' num2str(eigval2)]);
+title(['Eigval2 = ' num2str(eigvals(2))]);
 
 
 

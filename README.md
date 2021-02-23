@@ -1,22 +1,24 @@
 <h1 align="center">The Second Laplacian Eigenvalue</h1>
-<div align="center"><i>A survey on the second smallest Laplacian eigenvalue  <img src="images_readme/picture0.png" height="20" />  and its applications.</i></div>
+<div align="center"><i>A survey on the second smallest normalized Laplacian eigenvalue and its applications.</i></div>
+
 <br>
 
-This project reveals the relationship between  <img src="images_readme/picture0.png" height="20" /> and the connectivity of a graph.
+The second smallest normalized Laplacian eigenvalue (I will call it *lambda2* for short) is closely related to the connectivity of a graph. Cheeger inequality states that graphs with a small one can be easily divided into two, and graphs with a large one are highly connected. In this project, I will introduce graphs with small and large *lambda2* and their applications.
 
+<br>
+<br>
 
-
-## Contents
-- [Introduction](#Introduction)
+# Contents
+- [Preliinaries](#Preliinaries)
     - [Normalized Laplacian](#Normalized-Laplacian)
     - [Eigenvalue of Normalized Laplacian](#Eigenvalue-of-Normalized-Laplacian)
     - [Conductance of Graph](#Conductance-of-Graph)
     - [Cheeger's Inequality](#Cheeger's-Inequality)
 
-- [Small Second Eigenvalue](#Small-Second-Eigenvalue) 
+- [Small *lambda2*](#Small-lambda2) 
     - [Image Partition](#Image-Partition)
 
-- [Large Second Eigenvalue](#Large-Second-Eigenvalue) 
+- [Large *lambda2*](#Large-lambda2) 
     - [Expander](#Expander)
     - [Algebraic Construction](#Algebraic-Construction)  
     - [Combinatorial Construction](#Combinatorial-Construction)  
@@ -25,12 +27,13 @@ This project reveals the relationship between  <img src="images_readme/picture0.
 
 
 
+<br>
+<br>
+
+# Preliinaries
 
 
-## Introduction
-
-
-### Normalized Laplacian
+## Normalized Laplacian
 
 <p align='center'><img src="images_readme/picture7.png" height="25" /></p>  
 
@@ -43,45 +46,45 @@ where *A* is the adjacency matrix and *D* is a diagonal matrix with degree of ve
 
 <br>
 
-### Eigenvalue of Normalized Laplacian
+## Eigenvalue of Normalized Laplacian
 
  - Eigenvalues are between 0 and 2.  
-
  - The smallest eigenvalue of Laplacian is always equal to 0, and its eigenvector is the all-one vector.  
- 
  - The multiplicity of the 0 eigenvalue is equal to the number of connected component a graph has.   
- 
- - The largest eigenvalue is 2 iff a graph is bipartite.  
+ - The largest eigenvalue <img src="images_readme/picture0.png" height="17" /> is 2 iff a graph is bipartite.  
 
+
+
+<br>
+
+## Conductance of Graph
+
+ - For a graph *G* = (*V*,*E*), conductance of a vertex subset *S* is the number of boundary of *S* divided by |*S*| or |*V-S*|, depend on who has less vertices.
+
+<p align='center'><img src="images_readme/picture3-2.png" height="165" /></p>
+
+ - Conductance of a graph is the smallest conductance of some vertex subset *S* with size < |*V*| / 2 .  
 
 
 
 
 <br>
 
-### Conductance of Graph
-
- - For a graph *G* = (*V*,*E*), conductance of a vertex subset *S* is (number of boundary of *S*) / min( number of vertex in *S*, number of vertex in *V-S* ).  
-<p align='center'><img src="images_readme/picture3-2.png" height="150" /></p>
-
- - Conductance of a graph is the smallest conductance of vertex subset *S* with size < |*V*| / 2 .  
-
-
-
-
-<br>
-
-### Cheeger's Inequality
+## Cheeger's Inequality
 
 <p align='center'><img src="images_readme/picture5.png" height="40" /></p>  
 
-Right side indicates:  
- - Small  <img src="images_readme/picture0.png" height="20" />  implies small conductance.  
- - Small conductance implies that its corresponding eigenvector provide a good cut.  
+Moreover, 
 
+<p align='center'><img src="images_readme/picture11.png" height="25" /></p>  
+
+Right side indicates:  
+ - Small *lambda2* implies small conductance.  
+ - Small conductance implies that it can be easily divided into 2.  
+ - The eigenvector of *lambda2* provides a good cut.  
 
 Left side indicates:  
- - Large  <img src="images_readme/picture0.png" height="20" />  implies large conductance.  
+ - Large *lambda2* implies large conductance.  
  - Large conductance implies that the graph is well-connected and is an expander.  
 
 
@@ -89,14 +92,14 @@ Left side indicates:
 
 
 <br>
+<br>
 
-## Small Second Eigenvalue
+# Small *lambda2*
 
-### Introduction
+## Examples
 
-Intuitively, graphs that can be easily divided into two have small  <img src="images_readme/picture0.png" height="20" />   :
+Graphs with a bottle neck have small *lambda2*  :
 
-(See images in the `images_readme` file.)
 <p align='center'>
     <img src="images_readme/graph1.png" width="190" />
     <img src="images_readme/graph1-eigval.png" width="190" />
@@ -104,13 +107,13 @@ Intuitively, graphs that can be easily divided into two have small  <img src="im
     <img src="images_readme/graph2-eigval.png" width="190" />
 </p>  
 
+Planar graphs also have small *lambda2* [3] :
 
-Surprisingly, planar graphs also have small  <img src="images_readme/picture0.png" height="20" />  [3] :
 <p align='center'>
-    <img src="images_readme/graph6.png" width="190" />
-    <img src="images_readme/graph6-eigval.png" width="190" />
     <img src="images_readme/graph5.png" width="190" />
     <img src="images_readme/graph5-eigval.png" width="190" />
+    <img src="images_readme/graph12.png" width="190" />
+    <img src="images_readme/graph12-eigval.png" width="190" />
 </p>  
 
 This fascinating property of planar graphs lead me to the next topic: image partition using the Laplacian of planar graph.  
@@ -119,23 +122,22 @@ This fascinating property of planar graphs lead me to the next topic: image part
 
 
 
-<br>
-<br>
+
 <br>
 
-### Image Partition
+## Image Partition
 
 Implement in `IP-L.ipynb`.  
 
 <br>
 
-***:round_pushpin: Framework***
+### Framework
 
 The construction is refer to [Professor Spielman's MATLAB code](http://www.cs.yale.edu/homes/spielman/sgta/), where also provides a fascinating talk of Spectral Graph Theory.  
 
 1. Construct a planar graph on the image.  
 2. Compute the Laplacian.  
-3. Compute  <img src="images_readme/picture0.png" height="20" />  and its corresponding eigenvector.  
+3. Compute *lambda2* and its eigenvector.  
 4. Divide the image into 2 using the eigenvector.  
     (An eigenvector assigns each vertex/pixel a number, simply puts positive ones to a group and non-positive ones to another.)  
 
@@ -143,27 +145,26 @@ The construction is refer to [Professor Spielman's MATLAB code](http://www.cs.ya
 
 
 
-
 <br>
 
-***:round_pushpin: Demonstration***
+### Demonstration
 
 For the results, the eigenvector cut the down-sampled version of image into 2 parts: the part with read filter and the remain part.
 
 
-`images_LP-L/cat.jpg`. Left: original image. Right: result image, size: 90 * 140.  
+:writing_hand: `images_LP-L/cat.jpg`. Left: original image. Right: result image, size: 90 * 140.  
 <p align='center'>
     <img src="images_IP-L/cat.jpg" width="300" />
     <img src="results_IP-L/cat-eigv2cut.jpg" width="300" />
 </p>
 
-`images_IP-L/fruit3.jpg`. Left: original image. Right: result image, size: 130 * 100.  
+:writing_hand: `images_IP-L/fruit3.jpg`. Left: original image. Right: result image, size: 130 * 100.  
 <p align='center'>
     <img src="images_IP-L/fruit3.jpg" width="300" />
     <img src="results_IP-L/fruit3-eigv2cut.jpg" width="300" />
 </p>
 
-`images_IP-L/fruit4.jpg`. Left: original image. Right: result image, size: 80 * 80.  
+:writing_hand: `images_IP-L/fruit4.jpg`. Left: original image. Right: result image, size: 80 * 80.  
 <p align='center'>
     <img src="images_IP-L/fruit4.jpg" width="280" />
     <img src="results_IP-L/fruit4-eigv5cut.jpg" width="280" />
@@ -175,7 +176,7 @@ See more results in `results_IP-L`.
 
 <br>
 
-***:round_pushpin: Conclusion***
+### Conclusion
 
 Various ways to have a clearer contour:
 
@@ -186,75 +187,59 @@ Various ways to have a clearer contour:
 
 
 
-
+<br>
 <br>
 
-## Large Second Eigenvalue
+# Large *lambda2*
 
 
-### Expander
+## Expander
 
-A graph with large second eigenvalue is an expander.   
+A graph with a large *lambda2* is an expander. 'Good' expanders are graphs with few edges but still well-connected, they have various theories in mathematics and applications in computer science. 
 
-A 'good' expander is a graph with few edges but still well-connected.  
-
-Good expanders have various theories in mathematics and applications in computer science. 
-
-I will introduce some properties and explicit constructions of a good d-regular expander.  
+I will introduce some properties and explicit constructions of good d-regular expanders.  
 
 
 
 <br>
 
-***:round_pushpin: Properties***
+### Properties
 
 - Every vertex subset has many neighbors, by the definition of the conductance.  
-
 - It is a sparsification of the complete graph. That is, they have similar spectrums of eigenvalues and eigenvectors, but the expander has much less edges.  
-
 - It acts like a random d-regular graph when it has many vertices, by the mixing lemma.  
-
 - A random walk on it converges quickly to the stationary distribution, by the random walk lemma.  
 
 
 
 <br>
 
-***:round_pushpin: Some expanders***
+### Some expanders
 
 <p align='center'>
-    <img src="images_readme/graph7.png" width="280" />
-    <img src="images_readme/graph10.png" width="280" />
-</p>  
-
-<p align='center'>
-    <img src="images_readme/graph7-eigval.png" width="280" />
-    <img src="images_readme/graph10-eigval.png" width="280" />
-
+    <img src="images_readme/graph7.png" width="190" />
+    <img src="images_readme/graph7-eigval.png" width="190" />
+    <img src="images_readme/graph10.png" width="190" />
+    <img src="images_readme/graph10-eigval.png" width="190" />
 </p>  
 
 
 
 <br>
 
-***:round_pushpin: Construct expander family***
+### Construct expander family
 
-Expander family is an infinite family Gn of d-regular graphs with second Laplacian eigenvalue bounded from below by a positive constant c, where d and c are independent of n.  
+Expander family is an infinite family Gn of d-regular graphs with *lambda2* bounded from below by a positive constant c, where d and c are independent of n. Constructing such family is useful in computer science.
 
-Constructing such family is useful in computer science.
-
-In `expander`, I implements 2 strategies using MATLAB, one is algebraic and the other is combinatorial.  
-
-Descriptions are in the following sections.
-
+In `expander`, I implements 2 strategies using MATLAB, one is algebraic and the other is combinatorial, describe in the following sections.  
 
 
 
 <br>
 
-***:round_pushpin: Difficulty***
+### Difficulty
 
-Since `eigs` become very slow when *n* is large, I use power method with Rayleigh quotient and matrix deflation technique to find  <img src="images_readme/picture0.png" height="20" /> after the construction.  
+Since `eigs` become very slow when *n* is large, I use power method with Rayleigh quotient and matrix deflation technique to find *lambda2*after the construction.  
 
 The algorithm can be seen in `expander/myeig.m`.
 
@@ -263,107 +248,95 @@ The algorithm can be seen in `expander/myeig.m`.
 
 <br>
 <br>
-<br>
 
-### Algebraic construction
+## Algebraic construction
+
+Implement in `expander/Margulis.m`.  
 
 Constructing the Margulis–Gabber–Galil expander. 
 
 - Simple to construct.  
-- Hard to analyze the expansion via second eigenvalue.  
+- Hard to analyze the expansion via *lambda2*.  
 
 
 
 <br>
 
-***:round_pushpin: Properties***
+### Framework
 
+A vertex is a pair from {0, 1, ..., n-1} x {0, 1, ..., n-1}. Connected vertex (a,b) to:
 
-For a given *n*:
-
-- The graph has *n* x *n* vertices.  
-- The graph is 8-regular.  
-- The graph has multi-edges and self-loops.  
-- There exist a constant *c > 0* such that <img src="images_readme/picture0.png" height="20" /> is larger than *c*  for all *n*. [2, lecture 18] 
-
-
-
-<br>
-
-***:round_pushpin: Framework***
-
-A vertex is a pair from {0, 1, ..., n-1} x {0, 1, ..., n-1}.
+- (a+-1, b)  
+- (a, b+-1)  
+- (a+-b, b)  
+- (a, b+-a)  
 
 The group operation is coordinate-wise addition modulo n.
 
-Connected vertex (a,b) to:
-
-- (a+-1,b)  
-- (a,b+-1)  
-- (a+-b,b)  
-- (a,b+-a)  
 
 
-The algorithm can be seen in `expander/Margulis.m`.
+<br>
+
+### Properties
+
+For all natural number n, the graph:
+
+- It is 8-regular.  
+- It has n*n vertices.  
+- It has multi-edges and self-loops.  
+- Its *lambda2* is larger than 1/294. [2, lecture 18] 
 
 
 
 <br>
 
-***:round_pushpin: Demonstration***
+### Demonstration
 
-	n = 12, eigval2 = 0.11339  
-	n = 24, eigval2 = 0.067516  
-	n = 36, eigval2 = 0.054649  
-	n = 60, eigval2 = 0.044917  
-	n = 100, eigval2 = 0.041554  
-    n = 120, eigval2 = 0.040094  
+	n = 12, lambda2 = 0.11339  
+	n = 24, lambda2 = 0.067516  
+	n = 36, lambda2 = 0.054649  
+	n = 60, lambda2 = 0.044917  
+	n = 100, lambda2 = 0.041554  
+    n = 120, lambda2 = 0.040094  
 
+(See results in `results_M_expander`.)
 
 <p align='center'>
     <img src="results_M_expander/n12.png" width="280" />
     <img src="results_M_expander/n24.png" width="280" />
 </p>
-
 <p align='center'>
     <img src="results_M_expander/n12-eigval.png" width="280" />
     <img src="results_M_expander/n24-eigval.png" width="280" />
 </p>
 
-See results in `results_M_expander`.
-
-
-
-
 
 
 <br>
-<br>
-<br>
 
-### Combinatorial construction
+## Combinatorial construction
 
 Constructing expanders using zig-zag product and tensor product. [4]  
 
 - Based on iterations.  
-- Simple to analyze the expansion via second eigenvalue.  
+- Simple to analyze the expansion via *lambda2*.  
 
 
 
 
 <br>
 
-#### **:round_pushpin: The zig-zag product**
+### The zig-zag product
 
-Implement in `expander/zigzagproduct.m`.
+Implement in `expander/demozigzag.m` and `expander/zigzagproduct.m`.
 
 <br>
 
-***Framework***
+***:round_pushpin: Framework***
 
-For a *d*-regular graph H with *h* vertices, and a *h*-regular graph G with *n* vertices, construct the graph <img src="images_readme/picture8.png" height="20" /> by:
+For a d-regular graph H with x vertices, and a x-regular graph G with n vertices, construct the graph <img src="images_readme/picture8.png" height="20" /> by:
 
-1. Replace each vertex of G with H, i.e., forming *n* clouds, each cloud has *h* vertices.  
+1. Replace each vertex of G with H, i.e., forming n clouds, each cloud has x vertices.  
 2. Edges form between 2 vertices if they can reach each other by taking 3 steps:  
 
     a. A step in one cloud. (zig)  
@@ -375,25 +348,29 @@ One need to number the vertices in H and think of them as the edge indices of a 
 A step in a cloud is taken at an edge in H.  
 For instance, consider 2 vertices, say 1 and 2. If (1,2) is an edge in H, then a step can form between the 1st and 2nd vertices in a cloud.
 
-A step between clouds is taken at where the edge indices and the vertices indices coincides.  
-For instance, consider 2 clouds, say u and v. If v is the 5th neighbor of u, and u is the 2nd neighbor of v, then a step can form between the 5th vertex in u and the 2nd vertex in v.  
+A step between clouds is taken at where the edge indices of G and the vertices indices of H coincides.  
+For instance, consider 2 clouds, say u and v. If v is the 5th neighbor of u and u is the 2nd neighbor of v (in G), then a step can form between the 5th vertex in u and the 2nd vertex in v (in <img src="images_readme/picture8.png" height="20" />).  
 
 
 <br>
 
-***Properties***
+***:round_pushpin: Properties***
 
 The graph  <img src="images_readme/picture8.png" height="20" />:
 
-- It is *d*^2-regular.
-- It has *h* x *n* vertices.
-- eigenvalue
+- It is d*d-regular.
+- It has x*n vertices.
+- Let <img src="images_readme/picture0.png" height="17" /> be the largest normalized Laplacian eigenvalue and define *lambda* as <p align='center'><br><img src="images_readme/picture12.png" height="20" /></p> then [4]: <p align='center'><br><img src="images_readme/picture13.png" height="55" /></p>
+
+<br>
+
+Note that the inequality is tighter and more beautiful if one consider the spectral radius of the normalized adjacency matrix. 
 
 
 
 <br>
 
-***Example***
+***:round_pushpin: Examples***
 
 <p align='center'>
     <img src="results_zigzag/demo-zigzag-g0.png" width="275" />
@@ -401,24 +378,27 @@ The graph  <img src="images_readme/picture8.png" height="20" />:
     <img src="results_zigzag/demo-zigzag-g2.png" width="275" />
 </p>
 
-
-
-<br>
-
-#### **:round_pushpin: The recursion**
-
-***Framework***
-
-1. Construct a basic graph G_0, it is *d*-regular and has *d*^8 vertices.  
-2. Define G_1 to be the square of G_0.  
-3. Define G_2 to be the tensor product of G_0 with itself.  
-4. For t > 2, define G_t by  
-<p align='center'><img src="images_readme/picture10.png" height="25" /></p>  
+<p align='center'>
+    <img src="results_zigzag/demo-zigzag-g0-eigval.png" width="275" />
+    <img src="results_zigzag/demo-zigzag-g1-eigval.png" width="275" />
+    <img src="results_zigzag/demo-zigzag-g2-eigval.png" width="275" />
+</p>
 
 <br>
 
-For G_t to be good expanders (say, second eigenvalue > 4/5), the basic graph should be a very good expander and *d* should be sufficiently large.  
+### The recursion [4]
 
+***:round_pushpin: Framework***
+
+1. Construct a base graph G_0, it is d-regular and has 8'th power of d vertices.  
+2. Let G_1 be the square of G_0.  
+3. Let G_2 be the tensor product of G_0 with itself.  
+4. For t > 2, construct G_t by  
+<p align='center'><img src="images_readme/picture10.png" height="28" /></p>  
+
+<br>
+
+For G_t to be good expanders (say, *lambda2* > 4/5), the base graph should be a very good expander and d should be sufficiently large.  
 This means that G_t quickly exceeds maximum array size preference of MATLAB, so I did not write a code for the recursion.  
 
 Instead, I will state how G_t looks like.  
@@ -427,36 +407,26 @@ Instead, I will state how G_t looks like.
 
 <br>
 
-***Properties***
+***:round_pushpin: Properties***
 
 The graph G_t:
 
-- It is *d*^2-regular.
-- It has *d*^{8t} vertices.
-- eigenvalue
+- It is d*d-regular.
+- It has t*8'th power of d vertices.
 
+- <img src="images_readme/picture17.png" height="21" /> 
 
 
 
 <br>
 
-#### **:round_pushpin: The basic graph**
+### The base graph
 
-Implement in `expander/affineplane.m`.  
-
-<br>
-
-***Framework***
-
-Construct the basic graph by:
-
-1. Construct an affine plane AP_0.  
-2. Define AP_1 to be the tensor product of AP_0 with itself.  
-3. Define AP_{t+1} to be the zig-zag product of AP_t and AP_0, for t = 1, 2, ..., 7.  
-
-AP_8 is what we want for the basic graph.
+Implement in `expander/demobase.m` and `expander/affineplane.m`.  
 
 <br>
+
+***:round_pushpin: Framework***
 
 Construct the affine plane by:
 
@@ -465,38 +435,60 @@ Construct the affine plane by:
 
 <br>
 
-***Properties of affine plane***
+Construct the base graph by:
 
-For a given prime power *q*, the affine plane:
+1. Construct an affine plane AP_0.  
+2. Define AP_1 as the tensor product of AP_0 with itself.  
+3. Define AP_{t+1} as the zig-zag product of AP_t and AP_0, for t = 1, 2, ..., 7.  
 
-- It is *q*-regular.  
-- It has *q* x *q* vertices.  
-- It has self-loops.  
-- The second eigenvalue is 1/*q*^{1/2}.
-
-Thus, the basic graph AP_8 will be *q*^2-regular, *q*^16 vertices, and has second eigenvalue  .
+AP_8 is what we want for the base graph.
 
 
 
 <br>
 
+***:round_pushpin: Properties***
+
+For a given prime power q (say the t'th power of p), the affine plane (AP_0):
+
+- It is q-regular.  
+- It has q*q vertices.  
+- It has self-loops.
+
+- <img src="images_readme/picture14.png" height="20" /><br> 
+- <img src="images_readme/picture15.png" height="20" />  
+
+<br>
+
+Thus, the base graph (AP_8): 
+
+- It is q*q-regular.
+- It has 16th power of q vertices.  
+
+- <img src="images_readme/picture16.png" height="22" />
+
 
 
 <br>
 
-***Example***
+***:round_pushpin: Examples***
 
 <p align='center'>
     <img src="results_zigzag/demo-affineplane-q5.png" width="280" />
     <img src="results_zigzag/demo-affineplane-q9.png" width="280" />
 </p>
+<p align='center'>
+    <img src="results_zigzag/demo-affineplane-q5-eigval.png" width="280" />
+    <img src="results_zigzag/demo-affineplane-q9-eigval.png" width="280" />
+</p>
+
 
 
 
 
 <br>
 
-## References
+# References
 [1] [Course: Spectral Graph Theory, Daniel A. Spielman, Yale.](http://www.cs.yale.edu/homes/spielman/561/syllabus.html)  
 [2] [Course: Graph Partitioning, Expanders and Spectral Methods, Luca Trevisan, UC Berkeley.](https://people.eecs.berkeley.edu/~luca/expanders2016/)  
 [3] Spectral partitioning works: Planar graphs and finite element meshes. Daniel A. Spielman and Shang-Hua Teng. Linear Algebra and its Applications, 421:284–305, 2007.  

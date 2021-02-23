@@ -14,6 +14,11 @@ g0y = cos(g0t);
 
 plotgraph(G0,g0x,g0y,g0title);
 
+eigvalA0 = eig(A0);
+eigvalA0 = 1-eigvalA0(end:-1:1);
+
+ploteigval(eigvalA0,eigvalA0(2),length(eigvalA0));
+
 
 
 % G1: Petersen graph
@@ -31,6 +36,12 @@ g1y = [8*g1y 4*g1y];
 
 plotgraph(G1,g1x,g1y,g1title);
 
+eigvalA1 = eig(A1);
+eigvalA1 = 1-eigvalA1(end:-1:1);
+
+
+ploteigval(eigvalA1,eigvalA1(2),length(eigvalA1));
+
 
 
 % G2: Zig-zag product of G1 and G0
@@ -46,3 +57,8 @@ g2x = g2x(:)';
 g2y = g2y(:)';
 
 plotgraph(G2,g2x,g2y,g2title);
+
+eigvalA2 = eig(A2);
+eigvalA2 = 1-eigvalA2(end:-1:1);
+
+ploteigval(eigvalA2,eigvalA2(2),length(eigvalA2));
