@@ -101,19 +101,23 @@ Left side indicates:
 Graphs with a bottle neck have small *lambda2*  :
 
 <p align='center'>
-    <img src="images_readme/graph1.png" width="190" />
-    <img src="images_readme/graph1-eigval.png" width="190" />
-    <img src="images_readme/graph2.png" width="190" />
-    <img src="images_readme/graph2-eigval.png" width="190" />
+    <img src="images_readme/graph1.png" width="300" />
+    <img src="images_readme/graph2.png" width="300" />
+</p>  
+<p align='center'>
+    <img src="images_readme/graph1-eigval.png" width="300" />
+    <img src="images_readme/graph2-eigval.png" width="300" />
 </p>  
 
 Planar graphs also have small *lambda2* [3] :
 
 <p align='center'>
-    <img src="images_readme/graph5.png" width="190" />
-    <img src="images_readme/graph5-eigval.png" width="190" />
-    <img src="images_readme/graph12.png" width="190" />
-    <img src="images_readme/graph12-eigval.png" width="190" />
+    <img src="images_readme/graph5.png" width="300" />
+    <img src="images_readme/graph12.png" width="300" />
+</p>  
+<p align='center'>
+    <img src="images_readme/graph5-eigval.png" width="300" />
+    <img src="images_readme/graph12-eigval.png" width="300" />
 </p>  
 
 This fascinating property of planar graphs lead me to the next topic: image partition using the Laplacian of planar graph.  
@@ -217,10 +221,12 @@ I will introduce some properties and explicit constructions of good d-regular ex
 ### Some expanders
 
 <p align='center'>
-    <img src="images_readme/graph7.png" width="190" />
-    <img src="images_readme/graph7-eigval.png" width="190" />
-    <img src="images_readme/graph10.png" width="190" />
-    <img src="images_readme/graph10-eigval.png" width="190" />
+    <img src="images_readme/graph7.png" width="300" />
+    <img src="images_readme/graph10.png" width="300" />
+</p>  
+<p align='center'>
+    <img src="images_readme/graph7-eigval.png" width="300" />
+    <img src="images_readme/graph10-eigval.png" width="300" />
 </p>  
 
 
@@ -302,12 +308,12 @@ For all natural number n, the graph:
 (See results in `results_M_expander`.)
 
 <p align='center'>
-    <img src="results_M_expander/n12.png" width="280" />
-    <img src="results_M_expander/n24.png" width="280" />
+    <img src="results_M_expander/n12.png" width="300" />
+    <img src="results_M_expander/n24.png" width="300" />
 </p>
 <p align='center'>
-    <img src="results_M_expander/n12-eigval.png" width="280" />
-    <img src="results_M_expander/n24-eigval.png" width="280" />
+    <img src="results_M_expander/n12-eigval.png" width="300" />
+    <img src="results_M_expander/n24-eigval.png" width="300" />
 </p>
 
 
@@ -360,7 +366,7 @@ The graph  <img src="images_readme/picture8.png" height="20" />:
 
 - It is d*d-regular.
 - It has x*n vertices.
-- Let <img src="images_readme/picture0.png" height="17" /> be the largest normalized Laplacian eigenvalue and define *lambda* as <p align='center'><br><img src="images_readme/picture12.png" height="20" /></p> then [4]: <p align='center'><br><img src="images_readme/picture13.png" height="55" /></p>
+- Let <img src="images_readme/picture0.png" height="17" /> be the largest normalized Laplacian eigenvalue and define *lambda* as <p align='center'><img src="images_readme/picture12.png" height="20" /></p> then [4]: <p align='center'><img src="images_readme/picture13.png" height="55" /></p>
 
 <br>
 
@@ -373,15 +379,15 @@ Note that the inequality is tighter and more beautiful if one consider the spect
 ***:round_pushpin: Examples***
 
 <p align='center'>
-    <img src="results_zigzag/demo-zigzag-g0.png" width="275" />
-    <img src="results_zigzag/demo-zigzag-g1.png" width="275" />
-    <img src="results_zigzag/demo-zigzag-g2.png" width="275" />
+    <img src="results_zigzag/demo-zigzag-g0.png" width="300" />
+    <img src="results_zigzag/demo-zigzag-g1.png" width="300" />
+    <img src="results_zigzag/demo-zigzag-g2.png" width="300" />
 </p>
 
 <p align='center'>
-    <img src="results_zigzag/demo-zigzag-g0-eigval.png" width="275" />
-    <img src="results_zigzag/demo-zigzag-g1-eigval.png" width="275" />
-    <img src="results_zigzag/demo-zigzag-g2-eigval.png" width="275" />
+    <img src="results_zigzag/demo-zigzag-g0-eigval.png" width="300" />
+    <img src="results_zigzag/demo-zigzag-g1-eigval.png" width="300" />
+    <img src="results_zigzag/demo-zigzag-g2-eigval.png" width="300" />
 </p>
 
 <br>
@@ -474,12 +480,12 @@ Thus, the base graph (AP_8):
 ***:round_pushpin: Examples***
 
 <p align='center'>
-    <img src="results_zigzag/demo-affineplane-q5.png" width="280" />
-    <img src="results_zigzag/demo-affineplane-q9.png" width="280" />
+    <img src="results_zigzag/demo-affineplane-q5.png" width="300" />
+    <img src="results_zigzag/demo-affineplane-q9.png" width="300" />
 </p>
 <p align='center'>
-    <img src="results_zigzag/demo-affineplane-q5-eigval.png" width="280" />
-    <img src="results_zigzag/demo-affineplane-q9-eigval.png" width="280" />
+    <img src="results_zigzag/demo-affineplane-q5-eigval.png" width="300" />
+    <img src="results_zigzag/demo-affineplane-q9-eigval.png" width="300" />
 </p>
 
 
